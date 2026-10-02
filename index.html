@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20211f">
   <meta name="description" content="Roadmap operativo vivo de F5 AI Music Agency">
   <title>F5 AI Music Agency · Roadmap</title>
 </head>
@@ -31,6 +32,8 @@
     #f5-roadmap-inline .f5-bar { height: 100%; width: 16.66%; background: #adff2f; }
     #f5-roadmap-inline .f5-layout { display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 18px; margin-top: 20px; }
     #f5-roadmap-inline .f5-section-title { margin: 0 0 12px; font-size: 12px; letter-spacing: .1em; font-weight: 800; }
+    #f5-roadmap-inline .f5-section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    #f5-roadmap-inline .f5-swipe { display: none; color: light-dark(#6b6c65,#a9aaa3); font-size: 12px; }
     #f5-roadmap-inline .f5-days { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
     #f5-roadmap-inline .f5-day { appearance: none; text-align: left; color: inherit; background: light-dark(#fff,#20221e); border: 1px solid light-dark(#d8d7d0,#353731); border-radius: 14px; padding: 14px; min-height: 170px; display: flex; flex-direction: column; transition: transform .16s ease, border-color .16s ease; }
     #f5-roadmap-inline .f5-day:hover { transform: translateY(-2px); border-color: #8ccf25; }
@@ -75,11 +78,47 @@
       #f5-roadmap-inline .f5-days { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
     @media (max-width: 440px) {
-      #f5-roadmap-inline .f5-body { padding: 16px; }
-      #f5-roadmap-inline .f5-days, #f5-roadmap-inline .f5-detail-grid { grid-template-columns: 1fr; }
-      #f5-roadmap-inline .f5-plan { grid-template-columns: 1fr; }
+      #f5-roadmap-inline .f5-header { position: sticky; top: 0; z-index: 20; }
+      #f5-roadmap-inline .f5-header-inner { padding: 11px max(16px, env(safe-area-inset-right)) 11px max(16px, env(safe-area-inset-left)); }
+      #f5-roadmap-inline .f5-mark { width: 34px; height: 34px; }
+      #f5-roadmap-inline .f5-brand strong { font-size: 12px; }
+      #f5-roadmap-inline .f5-brand span { font-size: 11px; }
+      #f5-roadmap-inline .f5-save { display: flex; font-size: 0; gap: 0; }
+      #f5-roadmap-inline .f5-save::after { content: '1/6'; color: #fff; font-size: 12px; font-weight: 800; }
+      #f5-roadmap-inline .f5-save-dot { display: none; }
+      #f5-roadmap-inline .f5-body { padding: 28px max(16px, env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); overflow: hidden; }
+      #f5-roadmap-inline .f5-top { gap: 18px; padding-bottom: 22px; }
+      #f5-roadmap-inline h1 { margin-top: 6px; font-size: 42px; line-height: .96; }
+      #f5-roadmap-inline .f5-objective { font-size: 15px; line-height: 1.55; }
+      #f5-roadmap-inline .f5-progress { padding: 12px 14px; }
+      #f5-roadmap-inline .f5-layout { display: flex; flex-direction: column; gap: 24px; }
+      #f5-roadmap-inline .f5-section-head { margin-bottom: 10px; }
+      #f5-roadmap-inline .f5-section-title { margin: 0; font-size: 11px; }
+      #f5-roadmap-inline .f5-swipe { display: inline; }
+      #f5-roadmap-inline .f5-days { display: flex; grid-template-columns: none; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px 12px; }
+      #f5-roadmap-inline .f5-days::-webkit-scrollbar { display: none; }
+      #f5-roadmap-inline .f5-day { flex: 0 0 min(82vw, 310px); min-height: 156px; padding: 16px; scroll-snap-align: center; touch-action: pan-x pan-y; }
+      #f5-roadmap-inline .f5-date { font-size: 30px; }
+      #f5-roadmap-inline .f5-status { padding: 5px 9px; font-size: 11px; }
+      #f5-roadmap-inline .f5-focus { font-size: 17px; }
+      #f5-roadmap-inline .f5-deliverable { font-size: 13px; }
+      #f5-roadmap-inline .f5-detail { margin-top: 4px; padding-top: 22px; }
+      #f5-roadmap-inline .f5-detail h2 { font-size: 28px; }
+      #f5-roadmap-inline .f5-detail-head { align-items: center; }
+      #f5-roadmap-inline .f5-question { margin: 12px 0 18px; font-size: 16px; line-height: 1.5; }
+      #f5-roadmap-inline .f5-plan, #f5-roadmap-inline .f5-detail-grid { grid-template-columns: 1fr; gap: 10px; }
+      #f5-roadmap-inline .f5-plan-card, #f5-roadmap-inline .f5-block { padding: 16px; border: 1px solid light-dark(#d8d7d0,#353731); border-radius: 12px; background: light-dark(#fff,#20221e); }
+      #f5-roadmap-inline .f5-plan-card h3, #f5-roadmap-inline .f5-block h3 { font-size: 12px; }
+      #f5-roadmap-inline .f5-plan-card ol, #f5-roadmap-inline .f5-plan-card p, #f5-roadmap-inline .f5-block p { font-size: 15px; line-height: 1.58; }
       #f5-roadmap-inline .f5-block.wide { grid-column: auto; }
-      #f5-roadmap-inline .f5-save { display: none; }
+      #f5-roadmap-inline .f5-report-link { min-height: 72px; padding: 16px; }
+      #f5-roadmap-inline .f5-report-link strong { font-size: 14px; }
+      #f5-roadmap-inline .f5-report-link span { font-size: 12px; line-height: 1.45; }
+      #f5-roadmap-inline .f5-report-link b { font-size: 0; }
+      #f5-roadmap-inline .f5-report-link b::after { content: '›'; font-size: 24px; }
+      #f5-roadmap-inline .f5-parking { order: 2; padding: 20px; }
+      #f5-roadmap-inline .f5-parking h2 { font-size: 17px; }
+      #f5-roadmap-inline .f5-parking > p, #f5-roadmap-inline .f5-idea { font-size: 14px; line-height: 1.55; }
     }
   </style>
 
@@ -103,7 +142,7 @@
 
       <div class="f5-layout">
         <div>
-          <h2 class="f5-section-title">CALENDARIO DE TRABAJO</h2>
+          <div class="f5-section-head"><h2 class="f5-section-title">CALENDARIO DE TRABAJO</h2><span class="f5-swipe">Desliza para recorrer</span></div>
           <div class="f5-days" id="f5-days"></div>
           <div class="f5-detail" id="f5-detail" aria-live="polite"></div>
         </div>
