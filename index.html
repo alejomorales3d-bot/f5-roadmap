@@ -55,6 +55,10 @@
     #f5-roadmap-inline .f5-block h3 { margin: 0 0 5px; font-size: 11px; letter-spacing: .07em; }
     #f5-roadmap-inline .f5-block p { margin: 0; font-size: 13px; line-height: 1.5; color: light-dark(#565750,#c0c1ba); }
     #f5-roadmap-inline .f5-block.wide { grid-column: 1 / -1; }
+    #f5-roadmap-inline .f5-report-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; padding: 15px 16px; border-radius: 12px; background: #20211f; color: #fff; text-decoration: none; }
+    #f5-roadmap-inline .f5-report-link strong { display: block; font-size: 13px; }
+    #f5-roadmap-inline .f5-report-link span { display: block; margin-top: 3px; color: #aaa; font-size: 11px; }
+    #f5-roadmap-inline .f5-report-link b { color: #adff2f; font-size: 13px; white-space: nowrap; }
     #f5-roadmap-inline .f5-parking { background: #20211f; color: #fff; border-radius: 16px; padding: 18px; align-self: start; }
     #f5-roadmap-inline .f5-parking-head { display: flex; gap: 10px; align-items: center; }
     #f5-roadmap-inline .f5-bulb { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #adff2f; color: #20211f; }
@@ -131,7 +135,8 @@
         const plan = `<div class="f5-plan"><div class="f5-plan-card"><h3>TAREAS CONCRETAS</h3><ol>${d.tasks.map(task => `<li>${task}</li>`).join('')}</ol></div><div class="f5-plan-card"><h3>RESULTADO / ENTREGABLE</h3><p>${d.deliverable}</p></div></div>`;
         const pending = 'Pendiente de cierre';
         const closure = d.status === 'Cerrado' ? `<div class="f5-detail-grid"><div class="f5-block"><h3>QUÉ APRENDIMOS</h3><p>${d.learned}</p></div><div class="f5-block"><h3>QUÉ NOS SORPRENDIÓ / CONTRADIJO</h3><p>${d.surprised}</p></div><div class="f5-block"><h3>QUÉ SIGNIFICA PARA F5</h3><p>${d.meaning}</p></div><div class="f5-block"><h3>QUÉ TODAVÍA NO SABEMOS</h3><p>${d.unknowns}</p></div><div class="f5-block wide"><h3>QUÉ DECIDIMOS POR AHORA</h3><p>${d.decisions}</p></div></div>` : `<div class="f5-detail-grid"><div class="f5-block"><h3>QUÉ APRENDIMOS</h3><p>${pending}</p></div><div class="f5-block"><h3>QUÉ NOS SORPRENDIÓ / CONTRADIJO</h3><p>${pending}</p></div><div class="f5-block"><h3>QUÉ SIGNIFICA PARA F5</h3><p>${pending}</p></div><div class="f5-block"><h3>QUÉ TODAVÍA NO SABEMOS</h3><p>${pending}</p></div><div class="f5-block wide"><h3>QUÉ DECIDIMOS POR AHORA</h3><p>${pending}</p></div></div>`;
-        detailEl.innerHTML = `<div class="f5-detail-head"><div><div class="f5-kicker">${d.weekday} · ${d.date}</div><h2>${d.focus}</h2></div><span class="f5-status ${d.status === 'Cerrado' ? 'done' : ''}">${d.status}</span></div><p class="f5-question"><strong>Pregunta central:</strong> ${d.question}</p>${plan}${closure}`;
+        const report = d.id === '2026-10-02' ? `<a class="f5-report-link" href="day-01-report.html"><div><strong>INFORME COMPLETO · DÍA 1</strong><span>Mapa de funciones, ciclo de lanzamiento, actores, transformaciones, evidencias e implicaciones para F5.</span></div><b>ABRIR →</b></a>` : '';
+        detailEl.innerHTML = `<div class="f5-detail-head"><div><div class="f5-kicker">${d.weekday} · ${d.date}</div><h2>${d.focus}</h2></div><span class="f5-status ${d.status === 'Cerrado' ? 'done' : ''}">${d.status}</span></div><p class="f5-question"><strong>Pregunta central:</strong> ${d.question}</p>${plan}${closure}${report}`;
         daysEl.querySelectorAll('button').forEach(button => button.addEventListener('click', () => { selected = button.dataset.id; render(); try { window.openai?.setWidgetState({modelContent:{selectedDay:selected},privateContent:null}); } catch {} }));
       }
       const saved = window.openai?.widgetState?.modelContent?.selectedDay;
