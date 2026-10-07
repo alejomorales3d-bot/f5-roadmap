@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20211f">
+  <meta name="description" content="Informe del Día 4 de F5 AI Music Agency: agentes de IA, workflows, automatización, memoria, tools, guardrails y supervisión humana.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23adff2f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%2320211f'%3EF5%3C/text%3E%3C/svg%3E">
+  <title>F5 · Informe Día 4 — AI Agents</title>
+  <style>
+    :root{color-scheme:light dark;--ink:light-dark(#20211f,#f5f5ef);--muted:light-dark(#62635d,#b9bbb2);--paper:light-dark(#f1f0ea,#111210);--card:light-dark(#fff,#20221e);--soft:light-dark(#e7e6df,#292b27);--line:light-dark(#d7d6cf,#353731);--lime:#adff2f;--dark:#20211f}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:10;background:#20211f;color:#fff;border-bottom:1px solid #3b3c38}.top-inner{max-width:1060px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px}.mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#20211f;font-size:12px;font-weight:900}.brand strong{display:block;font-size:13px;letter-spacing:.04em}.brand span{display:block;color:#aaa;font-size:11px}.back{color:var(--lime);text-decoration:none;font-size:12px;font-weight:800}.wrap{max-width:1060px;margin:auto;padding:58px 24px 80px}.kicker{font-size:12px;letter-spacing:.13em;font-weight:800;color:var(--muted)}h1{max-width:940px;margin:10px 0 18px;font-size:clamp(42px,8vw,82px);line-height:.95;letter-spacing:-.06em}.lead{max-width:850px;margin:0;color:var(--muted);font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pill{padding:6px 10px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:11px;font-weight:700}.finding{margin:34px 0;padding:24px;border-left:6px solid var(--lime);border-radius:0 16px 16px 0;background:var(--dark);color:#fff}.finding small{display:block;color:var(--lime);font-weight:800;letter-spacing:.1em}.finding p{margin:8px 0 0;font-size:clamp(20px,3vw,30px);line-height:1.25;font-weight:800}.section{padding:42px 0;border-top:1px solid var(--line)}h2{margin:0 0 10px;font-size:30px;line-height:1.15;letter-spacing:-.035em}.intro{max-width:850px;margin:0 0 22px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}.card:before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--lime)}.card .eyebrow{color:light-dark(#689b19,#adff2f);font-size:11px;font-weight:900;letter-spacing:.1em}.card h3{margin:4px 0 7px;font-size:20px}.card p{margin:0;color:var(--muted);font-size:14px}.card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13px}.card li{margin:4px 0}.loop{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin-top:18px}.loop article{position:relative;padding:15px 9px;border-radius:12px;background:var(--dark);color:#fff;text-align:center}.loop article:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;z-index:2;color:var(--lime);font-weight:900}.loop strong{display:block;font-size:11px}.loop span{display:block;margin-top:5px;color:#bbb;font-size:10px;line-height:1.35}.components{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.component{padding:18px;border-radius:14px;background:var(--card);border:1px solid var(--line)}.component b{display:block;color:light-dark(#689b19,#adff2f);font-size:11px;letter-spacing:.09em}.component h3{margin:5px 0 7px;font-size:17px}.component p{margin:0;color:var(--muted);font-size:13px}.map-wrap{overflow-x:auto;margin-top:18px;border:1px solid var(--line);border-radius:16px;background:var(--card)}table{width:100%;min-width:820px;border-collapse:collapse;font-size:13px}th,td{padding:13px 11px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:middle;text-align:center}th:first-child,td:first-child{text-align:left}th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}thead th{background:var(--dark);color:#fff;font-size:11px;letter-spacing:.06em}tbody th{font-size:12px}.dots{color:light-dark(#689b19,#adff2f);font-weight:900;letter-spacing:2px}.dash{color:var(--muted)}.rules{counter-reset:rule;display:grid;grid-template-columns:1fr 1fr;gap:10px}.rule{counter-increment:rule;padding:17px;border:1px solid var(--line);border-radius:13px;background:var(--card)}.rule:before{content:'0' counter(rule);display:block;color:light-dark(#689b19,#adff2f);font-size:11px;font-weight:900;letter-spacing:.1em}.rule h3{margin:3px 0 6px;font-size:16px}.rule p{margin:0;color:var(--muted);font-size:13px}.levels{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.level{padding:16px 10px;border-radius:13px;background:var(--card);border:1px solid var(--line)}.level b{display:block;color:light-dark(#689b19,#adff2f);font-size:11px}.level strong{display:block;margin:3px 0;font-size:13px}.level span{display:block;color:var(--muted);font-size:11px}.gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}.gate{padding:17px;border-radius:13px;background:var(--card);border:1px solid var(--line)}.gate strong{display:block;font-size:12px}.gate p{margin:5px 0 0;color:var(--muted);font-size:13px}.deliverable{padding:28px;border:2px solid var(--lime);border-radius:18px;background:var(--card)}.deliverable-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}.deliverable-head h2{margin:4px 0}.delivered{padding:7px 10px;border-radius:99px;background:var(--lime);color:#20211f;font-size:11px;font-weight:900;white-space:nowrap}.architecture{display:grid;grid-template-columns:1fr;gap:9px;margin-top:20px}.arch-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.arch-box{padding:14px;border-radius:12px;background:var(--dark);color:#fff;text-align:center;font-size:12px;font-weight:800}.arch-box.lime{background:var(--lime);color:#20211f}.arch-base{padding:13px;border-radius:12px;background:var(--soft);text-align:center;font-size:12px;font-weight:800}.principle{margin-top:16px;padding:18px;border-radius:14px;background:light-dark(#ddffa8,#2b3a1f);font-weight:750}.closure{display:grid;grid-template-columns:1fr 1fr;gap:12px}.closure article{padding:18px;border-radius:14px;background:var(--card);border:1px solid var(--line)}.closure article:last-child{grid-column:1/-1;background:var(--dark);color:#fff}.closure h3{margin:0 0 6px;font-size:11px;letter-spacing:.09em}.closure p{margin:0;color:var(--muted);font-size:13px}.closure article:last-child p{color:#ddd}.sources{margin:0;padding-left:20px}.sources li{margin:9px 0;color:var(--muted);font-size:13px}.sources a{color:inherit}.note{font-size:12px;color:var(--muted)}
+    @media(max-width:760px){.grid,.components,.rules,.closure,.gates{grid-template-columns:1fr}.closure article:last-child{grid-column:auto}.loop,.levels{grid-template-columns:1fr;gap:22px}.loop article:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-21px}.arch-row{grid-template-columns:1fr}.wrap{padding-top:38px}.top-inner{padding:12px 16px}h1{font-size:48px}.back{font-size:0}.back:after{content:'←';font-size:18px}.deliverable-head{display:block}.delivered{display:inline-block;margin-top:8px}}
+    @media(max-width:440px){body{font-size:16px}.top-inner{padding:11px max(16px,env(safe-area-inset-right)) 11px max(16px,env(safe-area-inset-left))}.brand strong{font-size:12px}.brand span{font-size:11px}.back{font-size:11px}.back:after{content:none}.wrap{padding:32px max(18px,env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}.kicker{font-size:11px;line-height:1.45}h1{margin:10px 0 16px;font-size:clamp(38px,11vw,46px);line-height:.98}.lead{font-size:16px;line-height:1.6}.finding{margin:26px 0;padding:20px 18px}.finding p{font-size:22px}.section{padding:34px 0}h2{font-size:28px}.intro{font-size:16px}.card,.component,.rule,.gate,.closure article{padding:17px}.card p,.card li,.component p,.rule p,.gate p,.closure p{font-size:15px;line-height:1.55}.map-wrap{margin-left:-18px;margin-right:-18px;border-left:0;border-right:0;border-radius:0}.deliverable{padding:18px 14px}.sources li{font-size:15px;line-height:1.55;overflow-wrap:anywhere}.note{font-size:14px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand"><div class="mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><span>Intelligence Log</span></div></div><a class="back" href="index.html">← VOLVER AL ROADMAP</a></div></header>
+  <main class="wrap">
+    <div class="kicker">INFORME 04 · MIÉRCOLES 7 DE OCTUBRE DE 2026</div>
+    <h1>¿Qué puede hacer realmente un agente de IA?</h1>
+    <p class="lead">Síntesis de la investigación del Día 4: diferencia entre chatbot, automatización, workflow y agente; componentes de un sistema agentic; autonomía, memoria, tools, evaluación y supervisión humana; y su aplicación concreta al futuro sistema F5.</p>
+    <div class="meta"><span class="pill">Estado · Cerrado</span><span class="pill">Semana 1 · ENTENDER</span><span class="pill">Entregable · AI Agents Capability Map v0.1</span></div>
+
+    <section class="finding"><small>CONCLUSIÓN EJECUTIVA</small><p>F5 no necesita empezar construyendo muchos agentes. Necesita identificar trabajos reales y utilizar, para cada uno, la arquitectura más simple capaz de resolverlo con calidad, control y evidencia.</p></section>
+
+    <section class="section">
+      <div class="kicker">01 · CUATRO SISTEMAS DISTINTOS</div><h2>No todo lo que usa IA es un agente</h2>
+      <p class="intro">La diferencia importante no es cuánta “inteligencia” parece tener el sistema, sino quién controla el camino de ejecución y cuánto puede cambiarlo según el contexto.</p>
+      <div class="grid">
+        <article class="card"><div class="eyebrow">CHATBOT</div><h3>Responde y termina</h3><p>Recibe una pregunta, interpreta el contexto y genera una respuesta. Puede usar IA avanzada, pero normalmente no sostiene un objetivo ni controla un proceso completo.</p></article>
+        <article class="card"><div class="eyebrow">AUTOMATIZACIÓN</div><h3>Ejecuta un camino fijo</h3><p>Las reglas y el orden están definidos de antemano: si ocurre A, hacer B y luego C. Es predecible, auditable y suele ser la mejor opción para trabajos repetitivos.</p></article>
+        <article class="card"><div class="eyebrow">AI WORKFLOW</div><h3>La IA trabaja dentro del proceso</h3><p>El recorrido general está diseñado por nosotros, mientras el modelo analiza, clasifica, redacta o decide en etapas acotadas con controles intermedios.</p></article>
+        <article class="card"><div class="eyebrow">AGENTE</div><h3>Decide cómo avanzar</h3><p>Recibe un objetivo, interpreta el estado, elige herramientas y siguientes pasos, observa resultados y ajusta el camino hasta terminar o pedir intervención.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">02 · EL AGENT LOOP</div><h2>Objetivo → decisión → acción → evidencia</h2>
+      <p class="intro">Lo verdaderamente agentic aparece cuando el modelo puede modificar el recorrido usando información nueva del entorno, no solamente seguir una secuencia escrita de antemano.</p>
+      <div class="loop" role="img" aria-label="Ciclo de un agente desde el objetivo hasta el resultado">
+        <article><strong>OBJETIVO</strong><span>Qué debe lograr.</span></article><article><strong>PENSAR</strong><span>Interpreta estado y contexto.</span></article><article><strong>ELEGIR</strong><span>Decide paso y herramienta.</span></article><article><strong>ACTUAR</strong><span>Usa tools sobre el entorno.</span></article><article><strong>OBSERVAR</strong><span>Lee evidencia y errores.</span></article><article><strong>EVALUAR</strong><span>Termina, ajusta o escala.</span></article>
+      </div>
+      <div class="principle">Regla F5: si siempre podemos escribir “A → B → C”, probablemente necesitamos un workflow. Si el sistema debe descubrir qué necesita, buscar, contrastar, corregir y decidir, entonces existe un candidato real para agente.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">03 · ANATOMÍA DE UNA CAPACIDAD AGENTIC</div><h2>Seis piezas que deben diseñarse juntas</h2>
+      <div class="components">
+        <article class="component"><b>01 · CEREBRO</b><h3>Modelo</h3><p>Interpreta, razona, compara, genera hipótesis y decide el siguiente paso.</p></article>
+        <article class="component"><b>02 · MANDATO</b><h3>Instrucciones</h3><p>Define trabajo, objetivo, reglas, condiciones de salida y acciones prohibidas.</p></article>
+        <article class="component"><b>03 · CONTINUIDAD</b><h3>Contexto + memoria</h3><p>Recupera artista, historia, audiencias, experimentos, decisiones y aprendizajes relevantes.</p></article>
+        <article class="component"><b>04 · MANOS</b><h3>Tools</h3><p>Permiten consultar datos, leer archivos, usar APIs, ejecutar código y activar sistemas.</p></article>
+        <article class="component"><b>05 · FRONTERAS</b><h3>Guardrails</h3><p>Permisos, aprobaciones, datos accesibles, límites de gasto y acciones sensibles.</p></article>
+        <article class="component"><b>06 · CONTROL DE CALIDAD</b><h3>Evaluación</h3><p>Convierte “parece convincente” en criterios observables de corrección, utilidad y seguridad.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">04 · F5 AI AGENTS CAPABILITY MAP v0.1</div><h2>Qué tipo de capacidad necesita cada trabajo</h2>
+      <p class="intro">Los puntos indican afinidad provisional, no una arquitectura definitiva. La columna humana crece cuando el trabajo afecta identidad, estrategia, reputación o inversión.</p>
+      <div class="map-wrap" role="region" aria-label="Mapa de capacidades de IA para trabajos F5" tabindex="0">
+        <table><thead><tr><th>TRABAJO</th><th>AUTOMATIZACIÓN</th><th>WORKFLOW IA</th><th>AGENTE</th><th>HUMANO</th></tr></thead><tbody>
+          <tr><th>Recopilar y normalizar métricas</th><td class="dots">●●●</td><td class="dots">●</td><td class="dash">—</td><td class="dots">●</td></tr>
+          <tr><th>Crear reporte periódico</th><td class="dots">●●●</td><td class="dots">●●</td><td class="dots">●</td><td class="dots">●</td></tr>
+          <tr><th>Detectar anomalías</th><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●</td><td class="dots">●</td></tr>
+          <tr><th>Interpretar anomalías</th><td class="dots">●</td><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●●</td></tr>
+          <tr><th>Investigar mercado y nichos</th><td class="dots">●</td><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●●</td></tr>
+          <tr><th>Analizar audiencia</th><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●●</td><td class="dots">●●</td></tr>
+          <tr><th>Generar hipótesis</th><td class="dash">—</td><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●●</td></tr>
+          <tr><th>Priorizar experimentos</th><td class="dots">●</td><td class="dots">●●</td><td class="dots">●●</td><td class="dots">●●●</td></tr>
+          <tr><th>Crear variantes de contenido</th><td class="dots">●</td><td class="dots">●●●</td><td class="dots">●●</td><td class="dots">●●●</td></tr>
+          <tr><th>Publicar contenido aprobado</th><td class="dots">●●●</td><td class="dots">●</td><td class="dots">●</td><td class="dots">●</td></tr>
+          <tr><th>Decidir identidad o posicionamiento</th><td class="dash">—</td><td class="dots">●</td><td class="dots">●</td><td class="dots">●●●</td></tr>
+          <tr><th>Registrar y recuperar aprendizajes</th><td class="dots">●●</td><td class="dots">●●●</td><td class="dots">●●●</td><td class="dots">●</td></tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">05 · PRUEBA F5</div><h2>Cuándo un trabajo sí merece un agente</h2>
+      <div class="rules">
+        <article class="rule"><h3>Repetición</h3><p>¿Ocurre con suficiente frecuencia para justificar convertirlo en una capacidad del sistema?</p></article>
+        <article class="rule"><h3>Valor</h3><p>¿Mejorarlo o acelerarlo produce una ventaja operativa o estratégica relevante?</p></article>
+        <article class="rule"><h3>Incertidumbre</h3><p>¿Exige interpretar datos no estructurados o situaciones que no caben en reglas simples?</p></article>
+        <article class="rule"><h3>Camino dinámico</h3><p>¿Los pasos y herramientas necesarios cambian según lo que el sistema va encontrando?</p></article>
+        <article class="rule"><h3>Herramientas</h3><p>¿Necesita actuar sobre datos, documentos, APIs o aplicaciones para completar el trabajo?</p></article>
+        <article class="rule"><h3>Evaluabilidad</h3><p>¿Podemos definir qué significa hacerlo bien, detectar fallos y detenerlo con seguridad?</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">06 · AUTONOMÍA CON PROPÓSITO</div><h2>Más autonomía no significa más valor</h2>
+      <p class="intro">F5 utilizará el nivel mínimo de autonomía necesario. La meta no es llegar a L5 en todo, sino resolver cada trabajo con la mejor relación entre desempeño, costo, riesgo y supervisión.</p>
+      <div class="levels"><article class="level"><b>L0</b><strong>ASSIST</strong><span>Humano dirige.</span></article><article class="level"><b>L1</b><strong>EXECUTE</strong><span>IA hace una tarea.</span></article><article class="level"><b>L2</b><strong>WORKFLOW</strong><span>Proceso estructurado.</span></article><article class="level"><b>L3</b><strong>AGENT</strong><span>Decide pasos limitados.</span></article><article class="level"><b>L4</b><strong>ORCHESTRATE</strong><span>Coordina capacidades.</span></article><article class="level"><b>L5</b><strong>AUTONOMOUS</strong><span>Opera extensamente.</span></article></div>
+      <div class="gates">
+        <article class="gate"><strong>PUEDE OPERAR</strong><p>Investigación, clasificación, comparación, monitoreo, detección y documentación con trazabilidad.</p></article>
+        <article class="gate"><strong>REQUIERE APROBACIÓN</strong><p>Publicar, invertir dinero, contactar terceros, cambiar campañas o modificar sistemas externos.</p></article>
+        <article class="gate"><strong>LIDERAZGO HUMANO</strong><p>Identidad artística, visión, posicionamiento, sensibilidad cultural y decisiones reputacionales.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="deliverable">
+        <div class="deliverable-head"><div><div class="kicker">ENTREGABLE FINAL</div><h2>AI Agents Capability Map v0.1</h2><p class="intro" style="margin:0">Una primera arquitectura para decidir qué trabajos deben ser humanos, deterministas, asistidos por IA o realmente agentic.</p></div><span class="delivered">ENTREGADO</span></div>
+        <div class="architecture"><div class="arch-box lime">HUMAN JUDGMENT · VISIÓN · CRITERIO · APROBACIONES</div><div class="arch-row"><div class="arch-box">AUTOMATIONS</div><div class="arch-box">AI WORKFLOWS</div><div class="arch-box">AGENTS</div></div><div class="arch-base">TOOLS · DATA · KNOWLEDGE · MEMORY · EVALUATIONS · GUARDRAILS</div></div>
+        <div class="principle">No estamos construyendo una agencia de agentes. Estamos construyendo un sistema de capacidades: algunas humanas, algunas deterministas, algunas asistidas por IA y solamente aquellas que lo necesiten serán agentic.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">07 · CIERRE DEL DÍA 4</div><h2>Lo que queda incorporado al criterio de F5</h2>
+      <div class="closure">
+        <article><h3>QUÉ APRENDIMOS</h3><p>Un agente no es un chatbot sofisticado. Es un sistema donde el modelo puede controlar dinámicamente parte del workflow, elegir herramientas, observar resultados y decidir los siguientes pasos dentro de límites establecidos.</p></article>
+        <article><h3>QUÉ NOS SORPRENDIÓ / CONTRADIJO</h3><p>La arquitectura más AI-native no es necesariamente la que tiene más agentes. Los sistemas exitosos suelen comenzar con patrones simples y componibles, y añaden autonomía solo cuando el problema lo exige.</p></article>
+        <article><h3>QUÉ SIGNIFICA PARA F5</h3><p>F5 probablemente será una combinación de automatizaciones, workflows con IA, agentes, herramientas, memoria, datos, evaluaciones y puertas de aprobación humana; no una colección indiscriminada de agentes especializados.</p></article>
+        <article><h3>QUÉ TODAVÍA NO SABEMOS</h3><p>Qué infraestructura concreta puede unir estas piezas, cómo persistir memoria, conectar herramientas, disparar workflows y coordinar capacidades de forma fiable; y cuánto de ello puede sostener OpenClaw.</p></article>
+        <article><h3>QUÉ DECIDIMOS POR AHORA</h3><p>La arquitectura crece por necesidad, no por posibilidad. Usaremos el nivel mínimo de autonomía necesario para resolver bien cada trabajo; conservaremos control humano sobre identidad, estrategia, reputación, inversión y acciones externas sensibles.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">FUENTES OFICIALES CONSULTADAS</div><h2>Evidencia y criterios técnicos</h2>
+      <ul class="sources">
+        <li><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">OpenAI · A practical guide to building agents</a>: definición operativa, casos adecuados, orquestación, guardrails e intervención humana.</li>
+        <li><a href="https://platform.openai.com/docs/guides/agents">OpenAI Platform · Agents</a>: herramientas, lógica, memoria, despliegue y optimización de workflows agentic.</li>
+        <li><a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK</a>: agents, tools, handoffs, guardrails, sessions, human-in-the-loop y tracing.</li>
+        <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic · Building effective agents</a>: distinción entre workflows y agentes; patrones simples, componibles y complejidad gradual.</li>
+        <li><a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">Anthropic · Demystifying evals for AI agents</a>: evaluación de resultados, trayectorias, graders y pruebas de regresión.</li>
+      </ul>
+      <p class="note">Este mapa es v0.1: formula hipótesis de capacidad y control. No selecciona todavía modelos, frameworks ni proveedores; esas decisiones dependen de los trabajos concretos, sus riesgos y las posibilidades de la arquitectura del Día 5.</p>
+    </section>
+  </main>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"a8e65bddb01549f18507d0520f7419ab"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
