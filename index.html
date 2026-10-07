@@ -64,6 +64,9 @@
     #f5-roadmap-inline .f5-report-link strong { display: block; font-size: 13px; }
     #f5-roadmap-inline .f5-report-link span { display: block; margin-top: 3px; color: #aaa; font-size: 11px; }
     #f5-roadmap-inline .f5-report-link b { color: #adff2f; font-size: 13px; white-space: nowrap; }
+    #f5-roadmap-inline .f5-report-link.additional { margin-top: 10px; background: light-dark(#fff,#20221e); color: light-dark(#20211f,#fff); border: 1px solid light-dark(#20211f,#4b4e47); }
+    #f5-roadmap-inline .f5-report-link.additional span { color: light-dark(#66675f,#aaa); }
+    #f5-roadmap-inline .f5-report-link.additional b { color: light-dark(#679c18,#adff2f); }
     #f5-roadmap-inline .f5-parking { background: #20211f; color: #fff; border-radius: 16px; padding: 18px; align-self: start; }
     #f5-roadmap-inline .f5-parking-head { display: flex; gap: 10px; align-items: center; }
     #f5-roadmap-inline .f5-bulb { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #adff2f; color: #20211f; }
@@ -187,7 +190,12 @@
         };
         const r = reports[d.id];
         const report = r ? `<a class="f5-report-link" href="${r.href}"><div><strong>${r.title}</strong><span>${r.description}</span></div><b>ABRIR →</b></a>` : '';
-        detailEl.innerHTML = `<div class="f5-detail-head"><div><div class="f5-kicker">${d.weekday} · ${d.date}</div><h2>${d.focus}</h2></div><span class="f5-status ${d.status === 'Cerrado' ? 'done' : ''}">${d.status}</span></div><p class="f5-question"><strong>Pregunta central:</strong> ${d.question}</p>${plan}${closure}${report}`;
+        const additionalReports = {
+          '2026-10-07': {href:'day-04-cost-report.html', title:'INFORME ADICIONAL · ECONOMÍA DEL SISTEMA MULTIAGENTE', description:'Resumen ejecutivo de costos, presupuesto tecnológico, supervisión humana y recomendación para el piloto de 90 días.'}
+        };
+        const extra = additionalReports[d.id];
+        const additionalReport = extra ? `<a class="f5-report-link additional" href="${extra.href}"><div><strong>${extra.title}</strong><span>${extra.description}</span></div><b>ABRIR →</b></a>` : '';
+        detailEl.innerHTML = `<div class="f5-detail-head"><div><div class="f5-kicker">${d.weekday} · ${d.date}</div><h2>${d.focus}</h2></div><span class="f5-status ${d.status === 'Cerrado' ? 'done' : ''}">${d.status}</span></div><p class="f5-question"><strong>Pregunta central:</strong> ${d.question}</p>${plan}${closure}${report}${additionalReport}`;
         daysEl.querySelectorAll('button').forEach(button => button.addEventListener('click', () => { selected = button.dataset.id; render(); try { window.openai?.setWidgetState({modelContent:{selectedDay:selected},privateContent:null}); } catch {} }));
       }
       const saved = window.openai?.widgetState?.modelContent?.selectedDay;
