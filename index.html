@@ -30,7 +30,7 @@
     #f5-roadmap-inline .f5-progress { min-width: 175px; background: light-dark(#fff,#242622); padding: 14px; border-radius: 14px; }
     #f5-roadmap-inline .f5-progress-line { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; }
     #f5-roadmap-inline .f5-track { height: 7px; border-radius: 99px; background: light-dark(#e2e1db,#3b3d38); margin-top: 10px; overflow: hidden; }
-    #f5-roadmap-inline .f5-bar { height: 100%; width: 50%; background: #adff2f; }
+    #f5-roadmap-inline .f5-bar { height: 100%; width: 66.666%; background: #adff2f; }
     #f5-roadmap-inline .f5-layout { display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 18px; margin-top: 20px; }
     #f5-roadmap-inline .f5-section-title { margin: 0 0 12px; font-size: 12px; letter-spacing: .1em; font-weight: 800; }
     #f5-roadmap-inline .f5-section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -85,7 +85,7 @@
       #f5-roadmap-inline .f5-brand strong { font-size: 12px; }
       #f5-roadmap-inline .f5-brand span { font-size: 11px; }
       #f5-roadmap-inline .f5-save { display: flex; font-size: 0; gap: 0; }
-      #f5-roadmap-inline .f5-save::after { content: '3/6'; color: #fff; font-size: 12px; font-weight: 800; }
+      #f5-roadmap-inline .f5-save::after { content: '4/6'; color: #fff; font-size: 12px; font-weight: 800; }
       #f5-roadmap-inline .f5-save-dot { display: none; }
       #f5-roadmap-inline .f5-body { padding: 28px max(16px, env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); overflow: hidden; }
       #f5-roadmap-inline .f5-top { gap: 18px; padding-bottom: 22px; }
@@ -126,7 +126,7 @@
   <section class="f5-shell" aria-label="F5 Roadmap operativo">
     <header class="f5-header"><div class="f5-header-inner">
       <div class="f5-brand"><div class="f5-mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><span>Roadmap operativo</span></div></div>
-      <div class="f5-save"><span class="f5-save-dot"></span>Actualizado · Día 3 cerrado</div>
+      <div class="f5-save"><span class="f5-save-dot"></span>Actualizado · Día 4 cerrado</div>
     </div></header>
     <div class="f5-body">
       <div class="f5-top">
@@ -135,8 +135,8 @@
           <h1>ENTENDER</h1>
           <p class="f5-objective">Entender suficientemente Music Marketing, Growth, Data, AI Agents y OpenClaw para comenzar a formar criterio propio sobre qué debería construir F5.</p>
         </div>
-        <div class="f5-progress" aria-label="Progreso semanal: tres de seis jornadas cerradas">
-          <div class="f5-progress-line"><span>Progreso semanal</span><span>3/6</span></div>
+        <div class="f5-progress" aria-label="Progreso semanal: cuatro de seis jornadas cerradas">
+          <div class="f5-progress-line"><span>Progreso semanal</span><span>4/6</span></div>
           <div class="f5-track"><div class="f5-bar"></div></div>
         </div>
       </div>
@@ -152,6 +152,7 @@
           <p>Ideas valiosas que no deben convertirse todavía en trabajo.</p>
           <div class="f5-idea"><strong>HIPÓTESIS</strong>F5 como <em>Audience &amp; Artist Growth System</em>. Validar con la evidencia de los próximos días antes de decidir.</div>
           <div class="f5-idea"><strong>PRÓXIMA APLICACIÓN</strong>Diagnosticar a los cuatro artistas por su principal problema de Growth: adquisición, conversión, engagement, retención, reactivación o propagación. No ejecutar hasta contar con el mapa de datos.</div>
+          <div class="f5-idea"><strong>PRINCIPIO DE ARQUITECTURA</strong>F5 como sistema de capacidades, no como colección de agentes. Usar el nivel mínimo de autonomía necesario y validar cada agente con un trabajo real.</div>
           <div class="f5-idea"><strong>REGLA</strong>Registrar ideas de Semana 2 en adelante sin convertirlas todavía en compromisos.</div>
         </aside>
       </div>
@@ -165,13 +166,13 @@
         {id:'2026-10-02',weekday:'VIERNES',date:'02 OCT',focus:'Music Marketing',status:'Cerrado',deliverable:'Mapa Music Marketing v0.1 + preguntas rectoras',question:'¿Cómo funciona realmente el marketing musical hoy?',tasks:['Mapear las funciones y responsabilidades de una agencia o equipo de music marketing.','Reconstruir el ciclo de un lanzamiento: estrategia, preparación, salida y post-lanzamiento.','Identificar actores, disciplinas, entregas y puntos de coordinación.','Definir las preguntas rectoras que guiarán toda la investigación de la semana.'],learned:'El marketing musical moderno es un sistema multidisciplinario y continuo. El lanzamiento es un acelerador dentro de un ciclo mayor de desarrollo de audiencia.', surprised:'Una parte tan grande del consumo ocurre después del primer mes; esto contradice la obsesión tradicional por la release week.', meaning:'F5 debe organizarse alrededor del ciclo de audiencia, no alrededor de un calendario de publicaciones.', unknowns:'Cómo ocurre el paso entre descubrimiento, recurrencia, fandom y adopción; qué señales lo predicen y cuánto puede influir el marketing.', decisions:'No diseñar agentes todavía. Usar provisionalmente las ocho funciones como mapa de trabajos a validar.'},
         {id:'2026-10-05',weekday:'LUNES',date:'05 OCT',focus:'Music Growth + Adopción',status:'Cerrado',deliverable:'F5 Music Growth Model v0.1',question:'¿Cómo crece realmente un artista y cómo una persona pasa de desconocerlo a incorporarlo dentro de su mundo?',tasks:['Mapear el recorrido descubrimiento → interés → recurrencia → fan.','Entender el papel de los nichos, el fandom y la comunidad.','Identificar detonantes de adopción orgánica y pagada.','Contrastar la hipótesis de Adopción de F5 con evidencia y contraejemplos.'],learned:'El crecimiento musical es multidimensional. Debemos distinguir adquisición, conversión, engagement, retención, reactivación y propagación, y observar cómo las personas se mueven entre estados de relación.',surprised:'Una porción muy pequeña de audiencia profunda puede producir una parte desproporcionada del consumo y permanecer mucho más tiempo. El alcance bruto no equivale a crecimiento sostenible.',meaning:'F5 debe dejar de preguntar primero cuántos streams consiguió y empezar a medir cuántas personas avanzan hacia una relación de mayor profundidad con cada proyecto.',unknowns:'Qué señales podemos observar de forma consistente entre plataformas, cuáles podemos conectar, cuáles predicen una transición real y cuáles son métricas de vanidad.',decisions:'Adopción se mantiene, pero deja de ser un escalón del funnel: será el concepto paraguas de la profundización persona ↔ artista. El sistema provisional es Acquire → Convert → Engage → Retain → Reactivate → Propagate.'},
         {id:'2026-10-06',weekday:'MARTES',date:'06 OCT',focus:'Plataformas + Datos',status:'Cerrado',deliverable:'Platform & Data Map v0.1',question:'¿Dónde ocurre el crecimiento y cómo lo medimos?',tasks:['Mapear la función de Spotify, YouTube, TikTok e Instagram/Meta.','Identificar qué datos ofrece cada plataforma y sus limitaciones.','Definir los KPIs útiles por plataforma y por etapa del crecimiento.','Conectar las señales de atención, escucha, recurrencia y fandom.'],learned:'Las plataformas no son canales intercambiables: TikTok e Instagram amplifican descubrimiento y relación; YouTube revela atención profunda y catálogo; Spotify ofrece la lectura más directa de intención musical, recurrencia y reactivación.',surprised:'Hay muchos datos, pero poca atribución real entre plataformas. Alcance, views y monthly listeners describen tamaño; no demuestran por sí solos movimiento hacia fandom.',meaning:'F5 no debería ser otro panel que acumula cifras. Su valor potencial está en traducir señales fragmentadas a estados de relación, detectar cuellos de botella y orientar la siguiente decisión.',unknowns:'Qué señales predicen mejor la permanencia por género, territorio y etapa; qué datos podremos obtener vía APIs o exportaciones; y qué parte del movimiento puede atribuirse a una intervención concreta.',decisions:'Adoptar seis capas de evidencia —exposición, atención, intención, recurrencia, fandom y propagación— y tres familias de KPI —audiencia intencional, profundidad/recurrencia y propagación—. No crear todavía un score universal ni fusionar métricas incompatibles.'},
-        {id:'2026-10-07',weekday:'MIÉRCOLES',date:'07 OCT',focus:'AI Agents',status:'Pendiente',deliverable:'AI Agents Capability Map v0.1',question:'¿Qué puede hacer realmente un agente de IA?',tasks:['Distinguir agente, chatbot, automatización y workflow.','Mapear tools, memoria, flujos, autonomía y coordinación multiagente.','Revisar casos reales que puedan trasladarse a F5.','Documentar límites actuales y puntos de supervisión humana.']},
+        {id:'2026-10-07',weekday:'MIÉRCOLES',date:'07 OCT',focus:'AI Agents',status:'Cerrado',deliverable:'AI Agents Capability Map v0.1',question:'¿Qué puede hacer realmente un agente de IA, qué lo diferencia de un chatbot o una automatización y dónde puede generar valor dentro del futuro sistema F5?',tasks:['Distinguir agente, chatbot, automatización y workflow.','Mapear cerebro, instrucciones, tools, memoria, guardrails y evaluación.','Cruzar los trabajos de Marketing, Growth y Data con el nivel tecnológico adecuado.','Definir límites de autonomía y puntos de supervisión humana.'],learned:'Un agente no es un chatbot sofisticado. Es un sistema donde el modelo controla dinámicamente parte del workflow, elige herramientas, observa resultados y decide los siguientes pasos dentro de límites establecidos.',surprised:'La mejor arquitectura AI-native no necesariamente es la que tiene más agentes. Los patrones simples, predecibles y componibles deben agotarse antes de añadir autonomía y complejidad.',meaning:'F5 debe construirse como una combinación de automatizaciones, workflows con IA, agentes, tools, memoria, datos, evaluaciones y puertas humanas; no como una colección indiscriminada de agentes especializados.',unknowns:'Qué infraestructura concreta puede unir estas piezas, cómo persistir memoria, conectar herramientas, disparar workflows y coordinar capacidades de forma fiable; y cuánto puede sostener OpenClaw.',decisions:'La arquitectura crece por necesidad, no por posibilidad. Usaremos el nivel mínimo de autonomía necesario y conservaremos liderazgo humano sobre identidad, estrategia, reputación, inversión y acciones externas sensibles.'},
         {id:'2026-10-08',weekday:'JUEVES',date:'08 OCT',focus:'OpenClaw + arquitectura tecnológica',status:'Pendiente',deliverable:'OpenClaw Capability Map v0.1',question:'¿Qué puede hacer realmente OpenClaw por nosotros?',tasks:['Entender la arquitectura y los componentes principales de OpenClaw.','Mapear memoria, herramientas, integraciones y orquestación.','Separar lo automatizable hoy de lo que requiere más madurez.','Identificar riesgos, dependencias y tecnologías complementarias.']},
         {id:'2026-10-09',weekday:'VIERNES',date:'09 OCT',focus:'Cruce y síntesis',status:'Pendiente',deliverable:'F5 Intelligence Brief #01',question:'¿Qué empieza a revelar todo esto sobre F5?',tasks:['Cruzar Music Marketing, Growth, Plataformas, Data, Agents y OpenClaw.','Clasificar trabajos humanos, automatizables e híbridos.','Identificar oportunidades de producto y servicio sin ejecutarlas todavía.','Redactar decisiones provisionales, tensiones y preguntas abiertas.']}
       ];
       const daysEl = root.querySelector('#f5-days');
       const detailEl = root.querySelector('#f5-detail');
-      let selected = '2026-10-06';
+      let selected = '2026-10-07';
       function render() {
         daysEl.innerHTML = days.map(d => `<button class="f5-day ${d.status === 'Cerrado' ? 'closed' : ''}" type="button" data-id="${d.id}" aria-pressed="${d.id === selected}"><div class="f5-day-top"><div><span class="f5-weekday">${d.weekday}</span><span class="f5-date">${d.date}</span></div><span class="f5-status ${d.status === 'Cerrado' ? 'done' : ''}">${d.status}</span></div><div class="f5-focus">${d.focus}</div><div class="f5-deliverable">${d.deliverable}</div></button>`).join('');
         const d = days.find(item => item.id === selected);
@@ -181,7 +182,8 @@
         const reports = {
           '2026-10-02': {href:'day-01-report.html', title:'INFORME COMPLETO · DÍA 1', description:'Mapa de funciones, ciclo de lanzamiento, actores, transformaciones, evidencias e implicaciones para F5.'},
           '2026-10-05': {href:'day-02-report.html', title:'INFORME COMPLETO · DÍA 2', description:'Modelo de adopción, funnel dinámico, seis motores de Growth, evidencia y decisiones para F5.'},
-          '2026-10-06': {href:'day-03-report.html', title:'INFORME COMPLETO · DÍA 3', description:'Mapa de plataformas, capas de evidencia, KPIs, límites de atribución y sistema de medición para F5.'}
+          '2026-10-06': {href:'day-03-report.html', title:'INFORME COMPLETO · DÍA 3', description:'Mapa de plataformas, capas de evidencia, KPIs, límites de atribución y sistema de medición para F5.'},
+          '2026-10-07': {href:'day-04-report.html', title:'INFORME COMPLETO · DÍA 4', description:'Agentes vs. workflows, agent loop, anatomía, mapa de capacidades, autonomía y supervisión humana para F5.'}
         };
         const r = reports[d.id];
         const report = r ? `<a class="f5-report-link" href="${r.href}"><div><strong>${r.title}</strong><span>${r.description}</span></div><b>ABRIR →</b></a>` : '';
