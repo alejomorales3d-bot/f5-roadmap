@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#20211f">
+  <meta name="description" content="F5 Intelligence Brief #01 · Cierre de la Semana 1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23adff2f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%2320211f'%3EF5%3C/text%3E%3C/svg%3E">
+  <title>F5 Intelligence Brief #01 · Día 6</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111210;--surface:#20211f;--surface2:#282a26;--line:#393b35;--text:#f5f5ef;--muted:#b2b4ac;--acid:#adff2f;--acid-soft:#2b3a1f;--orange:#ffad66;--blue:#72b8ff;--pink:#f091c0;--max:1060px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(32,33,31,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.top-inner{max-width:var(--max);margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px}.mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--acid);color:#20211f;font-size:12px;font-weight:900}.brand strong{display:block;font-size:13px;letter-spacing:.04em}.brand span{display:block;color:#aaa;font-size:11px}.back{text-decoration:none;color:var(--acid);font-size:12px;font-weight:800;letter-spacing:.03em}.wrap{max-width:var(--max);margin:auto;padding:56px 24px 96px}.kicker{color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.13em}.hero h1{max-width:900px;margin:14px 0 18px;font-size:clamp(48px,8vw,86px);letter-spacing:-.065em;line-height:.91}.lead{max-width:790px;color:#c9cac3;font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.pill{padding:6px 10px;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:11px;font-weight:700}.finding{margin:38px 0 4px;padding:26px;border-left:5px solid var(--acid);border-radius:0 16px 16px 0;background:var(--surface)}.finding small{color:var(--acid);font-weight:900;letter-spacing:.1em}.finding p{max-width:900px;margin:8px 0 0;font-size:clamp(25px,4vw,39px);font-weight:800;line-height:1.12;letter-spacing:-.035em}.section{padding:58px 0;border-top:1px solid var(--line)}.section:first-of-type{border-top:0}h2{margin:8px 0 12px;font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-.045em}h3{margin:0;font-size:17px}.intro{max-width:780px;margin:0 0 25px;color:#c1c2bb;font-size:16px}.caption{margin:12px 0 0;color:#92958d;font-size:12px}.principle{margin-top:20px;padding:16px 18px;border-radius:12px;background:var(--acid-soft);color:#ddebc9;font-size:15px}.principle strong{color:var(--acid)}
+    .synthesis{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}.synthesis:after{content:"";position:absolute;left:8%;right:8%;bottom:-23px;height:2px;background:var(--acid)}.discovery{position:relative;min-height:220px;padding:18px 15px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.discovery:after{content:"";position:absolute;left:50%;bottom:-25px;width:2px;height:25px;background:var(--acid)}.discovery b{display:block;color:var(--acid);font-size:11px;letter-spacing:.09em}.discovery h3{margin:10px 0 8px;font-size:16px;line-height:1.2}.discovery p{margin:0;color:var(--muted);font-size:13px}.thesis{margin-top:45px;padding:22px;border:1px solid var(--acid);border-radius:14px;text-align:center;background:linear-gradient(135deg,#243019,#20211f)}.thesis span{display:block;color:var(--acid);font-size:11px;font-weight:900;letter-spacing:.11em}.thesis strong{display:block;margin-top:7px;font-size:23px;line-height:1.25}
+    .growth-loop{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin-top:24px}.growth-node{min-height:150px;padding:20px;border-radius:50%;aspect-ratio:1;display:grid;place-items:center;text-align:center;background:var(--surface);border:1px solid var(--line)}.growth-node strong{display:block;font-size:17px}.growth-node span{display:block;margin-top:4px;color:var(--muted);font-size:12px}.arrow{color:var(--acid);font-size:25px;font-weight:900}.loop-back{grid-column:1/-1;text-align:center;color:var(--acid);font-size:13px;font-weight:800;letter-spacing:.05em}.engines{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:17px}.engine{padding:6px 9px;border-radius:99px;background:var(--surface2);color:#d9dad3;font-size:11px;font-weight:750}
+    .architecture{display:grid;gap:9px;margin-top:26px}.layer{position:relative;padding:17px 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center}.layer:not(:last-child):after{content:"↓";position:absolute;left:50%;bottom:-18px;color:var(--acid);font-weight:900;z-index:2}.layer b{color:var(--acid);font-size:12px;letter-spacing:.08em}.layer span{color:var(--muted);font-size:14px}.layer.core{border-color:var(--acid);background:linear-gradient(90deg,#2b3a1f,#20211f)}.transverse{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.rail{padding:15px;border-top:3px solid var(--acid);background:var(--surface);border-radius:0 0 10px 10px}.rail strong{font-size:13px}.rail p{margin:5px 0 0;color:var(--muted);font-size:12px}
+    .truth-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.truth{padding:18px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}.truth b{display:block;margin-bottom:10px;font-size:11px;letter-spacing:.09em}.truth ul{margin:0;padding-left:18px;color:#c8cac2;font-size:13px}.truth li+li{margin-top:8px}.truth.known b{color:var(--acid)}.truth.hypothesis b{color:var(--orange)}.truth.unknown b{color:var(--pink)}
+    .autonomy{margin-top:25px}.spectrum{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:1px solid var(--line);border-radius:14px}.mode{min-height:176px;padding:18px;border-right:1px solid var(--line);background:var(--surface)}.mode:last-child{border-right:0}.mode:nth-child(1){border-top:5px solid #85877f}.mode:nth-child(2){border-top:5px solid var(--blue)}.mode:nth-child(3){border-top:5px solid var(--orange)}.mode:nth-child(4){border-top:5px solid var(--acid)}.mode b{font-size:11px;letter-spacing:.08em}.mode h3{margin:8px 0}.mode p{margin:0;color:var(--muted);font-size:13px}.gate{margin-top:10px;padding:13px 15px;border:1px solid var(--acid);border-radius:10px;color:#dceac9;font-size:13px;text-align:center}
+    .decision-list{display:grid;gap:8px;margin-top:25px}.decision{display:grid;grid-template-columns:72px 1.5fr 1fr;gap:16px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.decision b{color:var(--acid);font-size:13px}.decision strong{font-size:15px}.decision span{color:var(--muted);font-size:12px}
+    .brain{display:grid;grid-template-columns:1fr 1.4fr;gap:18px;align-items:stretch;margin-top:26px}.brain-core{display:grid;place-items:center;min-height:310px;border:1px solid var(--acid);border-radius:50%;text-align:center;background:radial-gradient(circle,#324621 0,#20211f 68%)}.brain-core div{max-width:210px}.brain-core b{display:block;color:var(--acid);font-size:12px;letter-spacing:.11em}.brain-core strong{display:block;margin:7px 0;font-size:27px;line-height:1}.brain-core span{color:var(--muted);font-size:12px}.brain-fields{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.field{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.field b{display:block;color:var(--acid);font-size:11px}.field span{font-size:13px;color:var(--muted)}
+    .priorities{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:28px}.priorities:before{content:"";position:absolute;left:4%;right:4%;top:31px;height:2px;background:var(--line)}.priority{position:relative;text-align:center}.pnum{position:relative;z-index:2;width:62px;height:62px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--acid);background:var(--bg);color:var(--acid);font-weight:900}.priority strong{display:block;font-size:12px;line-height:1.25}.priority span{display:block;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.3}
+    .success{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:24px}.success-item{min-height:150px;padding:16px 12px;border-radius:14px;background:var(--surface);border-top:4px solid var(--acid);text-align:center}.success-item b{display:block;font-size:22px;color:var(--acid)}.success-item strong{display:block;margin:5px 0;font-size:12px}.success-item span{color:var(--muted);font-size:11px}
+    .contradictions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.contradiction{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.contradiction b{color:var(--pink);font-size:11px;letter-spacing:.08em}.contradiction h3{margin:9px 0}.contradiction p{margin:0;color:var(--muted);font-size:13px}.turn{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);color:#dbe9c9!important}.turn strong{color:var(--acid)}
+    .closure{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}.closure article{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.closure article:last-child{grid-column:1/-1;border-color:var(--acid)}.closure h3{font-size:11px;letter-spacing:.08em}.closure p{margin:8px 0 0;color:var(--muted);font-size:14px}.deliverable{padding:28px;border:1px solid var(--acid);border-radius:16px;background:linear-gradient(135deg,#2a391f,#20211f)}.deliverable-head{display:flex;justify-content:space-between;align-items:start;gap:18px}.delivered{padding:7px 10px;border-radius:99px;background:var(--acid);color:#20211f;font-size:11px;font-weight:900}.footer-note{margin-top:22px;color:#8f918a;font-size:12px}
+    @media(max-width:820px){.synthesis{grid-template-columns:1fr}.synthesis:after,.discovery:after{display:none}.discovery{min-height:auto}.growth-loop{grid-template-columns:1fr}.growth-node{aspect-ratio:auto;min-height:auto;border-radius:14px}.arrow{transform:rotate(90deg);text-align:center}.truth-map,.contradictions,.transverse{grid-template-columns:1fr}.spectrum{grid-template-columns:1fr 1fr}.mode:nth-child(2){border-right:0}.decision{grid-template-columns:64px 1fr}.decision span{grid-column:2}.brain{grid-template-columns:1fr}.brain-core{min-height:280px}.priorities,.success{grid-template-columns:repeat(2,1fr)}.priorities:before{display:none}.priority:last-child,.success-item:last-child{grid-column:1/-1}.layer{grid-template-columns:1fr}.closure{grid-template-columns:1fr}.closure article:last-child{grid-column:auto}}
+    @media(max-width:480px){.top-inner{padding:11px max(16px,env(safe-area-inset-right)) 11px max(16px,env(safe-area-inset-left))}.back{font-size:0}.back:after{content:"←";font-size:18px}.wrap{padding:34px max(17px,env(safe-area-inset-right)) calc(72px + env(safe-area-inset-bottom)) max(17px,env(safe-area-inset-left))}.hero h1{font-size:44px}.lead{font-size:16px}.finding{padding:21px 18px}.finding p{font-size:24px}.section{padding:42px 0}h2{font-size:32px}.spectrum{grid-template-columns:1fr}.mode{border-right:0;border-bottom:1px solid var(--line)}.brain-fields{grid-template-columns:1fr}.priorities,.success{grid-template-columns:1fr}.priority:last-child,.success-item:last-child{grid-column:auto}.decision{grid-template-columns:1fr;gap:5px}.decision span{grid-column:auto}.deliverable{padding:21px 18px}.deliverable-head{display:block}.delivered{display:inline-block;margin-top:12px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand"><div class="mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><span>Intelligence Log</span></div></div><a class="back" href="index.html">← VOLVER AL ROADMAP</a></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">F5 INTELLIGENCE BRIEF #01 · VIERNES 9 DE OCTUBRE DE 2026</div>
+      <h1>¿Qué empieza a revelar todo esto sobre F5?</h1>
+      <p class="lead">Cruce y síntesis de la primera semana de investigación: Music Marketing, Growth, Plataformas &amp; Data, AI Agents y OpenClaw convertidos en una primera hipótesis operativa para F5.</p>
+      <div class="meta"><span class="pill">Estado · Cerrado</span><span class="pill">Semana 1 · ENTENDER</span><span class="pill">Entregable · F5 Intelligence Brief #01</span></div>
+    </section>
+
+    <section class="finding"><small>DICTAMEN DE LA SEMANA 1</small><p>F5 no debe comenzar construyendo agentes. Debe comenzar construyendo un sistema de crecimiento musical que aprenda a transformar exposición en relaciones sostenibles entre artistas y audiencias.</p></section>
+
+    <section class="section">
+      <div class="kicker">01 · LOS CINCO DESCUBRIMIENTOS</div><h2>La semana converge en una sola tesis</h2>
+      <p class="intro">Cada día respondió una parte diferente del problema. Al conectarlos, la tecnología deja de ser el punto de partida y se convierte en un medio para ejecutar un sistema de crecimiento y aprendizaje.</p>
+      <div class="synthesis" role="img" aria-label="Cinco descubrimientos de la Semana 1 que convergen en la tesis central de F5">
+        <article class="discovery"><b>DÍA 1 · MARKETING</b><h3>Un sistema, no una campaña</h3><p>Ocho trabajos coordinados y una capacidad transversal: orquestación.</p></article>
+        <article class="discovery"><b>DÍA 2 · GROWTH</b><h3>Relación, no solo streams</h3><p>Adopción conductual, emocional y social como concepto rector.</p></article>
+        <article class="discovery"><b>DÍA 3 · DATA</b><h3>Sensores parciales</h3><p>Las plataformas observan señales distintas; ninguna cuenta toda la historia.</p></article>
+        <article class="discovery"><b>DÍA 4 · AGENTS</b><h3>Capacidades, no agentes</h3><p>Usar el nivel mínimo de autonomía que resuelva bien cada trabajo.</p></article>
+        <article class="discovery"><b>DÍA 5 · OPENCLAW</b><h3>Orquestar, no definir</h3><p>Puede coordinar la ejecución; la inteligencia de negocio pertenece a F5.</p></article>
+      </div>
+      <div class="thesis"><span>TESIS F5 v0.1</span><strong>La exposición genera oportunidades. La adopción construye valor. El aprendizaje sistemático mejora la siguiente decisión.</strong></div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">02 · EL SISTEMA DE CRECIMIENTO</div><h2>De atención prestada a relación sostenible</h2>
+      <p class="intro">El crecimiento no es un embudo lineal. Es un ciclo donde F5 crea oportunidades, observa comportamientos y aprende qué hace avanzar la relación persona ↔ artista.</p>
+      <div class="growth-loop" role="img" aria-label="Ciclo de crecimiento F5: exposición, adopción y aprendizaje">
+        <div class="growth-node"><div><strong>EXPOSICIÓN</strong><span>La persona encuentra una canción, un contenido o una historia.</span></div></div><div class="arrow">→</div>
+        <div class="growth-node"><div><strong>ADOPCIÓN</strong><span>Busca, guarda, regresa, explora, se identifica y comparte.</span></div></div><div class="arrow">→</div>
+        <div class="growth-node"><div><strong>VALOR</strong><span>Relación, comunidad, consumo sostenido y oportunidades económicas.</span></div></div>
+        <div class="loop-back">↺ MEDIR → INTERPRETAR → APRENDER → DECIDIR MEJOR</div>
+      </div>
+      <div class="engines" aria-label="Seis motores de crecimiento"><span class="engine">ACQUIRE</span><span class="engine">CONVERT</span><span class="engine">ENGAGE</span><span class="engine">RETAIN</span><span class="engine">REACTIVATE</span><span class="engine">PROPAGATE</span></div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">03 · PRIMERA ARQUITECTURA CONCEPTUAL</div><h2>Cinco capas conectadas por aprendizaje</h2>
+      <p class="intro">Estas capas representan funciones del sistema, no cinco aplicaciones independientes. OpenClaw es candidato para la orquestación; el conocimiento y los criterios permanecen portables.</p>
+      <div class="architecture" role="img" aria-label="Arquitectura conceptual F5 en cinco capas">
+        <div class="layer"><b>01 · DIRECCIÓN HUMANA</b><span>Visión · sensibilidad artística · decisiones · control · trade-offs</span></div>
+        <div class="layer"><b>02 · INTELIGENCIA F5</b><span>Mercado · audiencias · identidad · estrategia · hipótesis</span></div>
+        <div class="layer core"><b>03 · ORQUESTACIÓN</b><span>OpenClaw —candidato— · agentes · workflows · automatizaciones · tools</span></div>
+        <div class="layer"><b>04 · EJECUCIÓN MUSICAL</b><span>Contenido · plataformas · audience development · paid media · experimentos</span></div>
+        <div class="layer"><b>05 · MEDICIÓN &amp; APRENDIZAJE</b><span>Datos · evaluación · resultados · memoria · nuevas decisiones</span></div>
+      </div>
+      <div class="transverse"><article class="rail"><strong>ARTIST BRAINS</strong><p>Conocimiento persistente y estructurado de cada proyecto.</p></article><article class="rail"><strong>GOVERNANCE</strong><p>Permisos, aprobaciones, trazabilidad, calidad y seguridad.</p></article><article class="rail"><strong>ECONOMICS</strong><p>Costos tecnológicos, trabajo humano y valor generado.</p></article></div>
+      <div class="principle"><strong>Definición provisional:</strong> F5 será un sistema modular de inteligencia, crecimiento y aprendizaje musical, coordinado por una capa tecnológica y supervisado mediante criterios humanos explícitos.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">04 · CERTEZA VS. HIPÓTESIS</div><h2>Coherencia conceptual no equivale a validación</h2>
+      <p class="intro">El informe separa deliberadamente lo fundamentado, lo que estamos proponiendo y lo que todavía debe demostrarse en el contexto real de F5.</p>
+      <div class="truth-map">
+        <article class="truth known"><b>FUNDAMENTADO</b><ul><li>El marketing musical necesita funciones coordinadas.</li><li>El crecimiento contiene comportamientos más profundos que un stream.</li><li>La IA puede ejecutar partes relevantes del trabajo.</li><li>OpenClaw tiene capacidades compatibles con la orquestación.</li></ul></article>
+        <article class="truth hypothesis"><b>HIPÓTESIS ESTRATÉGICAS</b><ul><li>Adopción puede orientar mejores decisiones de crecimiento.</li><li>Cada proyecto requiere estrategia diferenciada.</li><li>Artist Intelligence debe ser la primera capacidad común.</li><li>Una arquitectura modular será más transferible.</li></ul></article>
+        <article class="truth unknown"><b>NO DEMOSTRADO</b><ul><li>Que una operación multiagente sea más eficiente.</li><li>Que las integraciones musicales cubran lo necesario.</li><li>Que el sistema funcione con costos sostenibles.</li><li>Que F5 genere impacto musical repetible.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">05 · TRABAJO Y AUTONOMÍA</div><h2>El mecanismo depende del trabajo</h2>
+      <p class="intro">No se asigna tecnología por entusiasmo. Se elige el mecanismo más simple que entregue el resultado con la calidad, el costo y el control necesarios.</p>
+      <div class="autonomy"><div class="spectrum" role="img" aria-label="Espectro de ejecución desde automatización hasta liderazgo humano">
+        <article class="mode"><b>PREDECIBLE</b><h3>Automatización</h3><p>Recopilar métricas, normalizar datos, programar y publicar aquello ya aprobado.</p></article>
+        <article class="mode"><b>ESTRUCTURADO</b><h3>Workflow con IA</h3><p>Reportes, clasificación, comparación y borradores dentro de un proceso definido.</p></article>
+        <article class="mode"><b>DINÁMICO</b><h3>Agente</h3><p>Investigar anomalías, explorar mercados y elegir herramientas según contexto.</p></article>
+        <article class="mode"><b>ALTO IMPACTO</b><h3>Humano</h3><p>Identidad, posicionamiento, reputación, inversión y decisiones artísticas.</p></article>
+      </div><div class="gate">HUMAN GATES · publicar · invertir · contactar terceros · cambiar estrategia · modificar cuentas</div></div>
+      <div class="principle"><strong>Regla:</strong> usar el nivel mínimo de autonomía necesario para resolver bien el trabajo.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">06 · SIETE DECISIONES ESTRATÉGICAS</div><h2>Lo que queda formalmente registrado</h2>
+      <div class="decision-list">
+        <div class="decision"><b>F5-D01</b><strong>Construir un sistema de crecimiento musical</strong><span>No una colección de agentes.</span></div>
+        <div class="decision"><b>F5-D02</b><strong>Adoptar “adopción” como concepto rector</strong><span>La relación sostenible importa más que el alcance aislado.</span></div>
+        <div class="decision"><b>F5-D03</b><strong>Diseñar procesos antes de elegir tecnología</strong><span>Evita automatizar actividades innecesarias.</span></div>
+        <div class="decision"><b>F5-D04</b><strong>Priorizar señales que permitan decidir</strong><span>Evita dashboards sin utilidad estratégica.</span></div>
+        <div class="decision"><b>F5-D05</b><strong>Usar el nivel mínimo de autonomía</strong><span>Reduce complejidad, costo y riesgo.</span></div>
+        <div class="decision"><b>F5-D06</b><strong>Evaluar OpenClaw como orquestador prioritario</strong><span>Candidato, todavía no arquitectura definitiva.</span></div>
+        <div class="decision"><b>F5-D07</b><strong>Mantener conocimiento y métodos independientes</strong><span>Garantiza continuidad, portabilidad y transferencia.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">07 · QUÉ CONSTRUIR PRIMERO</div><h2>F5 · Artist Intelligence</h2>
+      <p class="intro">Antes de producir más contenido o desplegar agentes, F5 necesita comprender profundamente cada proyecto y convertir ese conocimiento en decisiones. Una estructura común, cuatro realidades artísticas diferentes.</p>
+      <div class="brain">
+        <div class="brain-core"><div><b>PRIMERA CAPACIDAD</b><strong>ARTIST INTELLIGENCE</strong><span>El fundamento compartido de Night Temptations, Sofiamar, Askariz y Baby Maestrys.</span></div></div>
+        <div class="brain-fields"><div class="field"><b>IDENTIDAD</b><span>Quién es y qué propone.</span></div><div class="field"><b>CATÁLOGO</b><span>Música, activos e historia.</span></div><div class="field"><b>MERCADO</b><span>Escena, comparables y oportunidades.</span></div><div class="field"><b>AUDIENCIA</b><span>Personas, estados y comportamientos.</span></div><div class="field"><b>DATOS</b><span>Accesos, señales y líneas base.</span></div><div class="field"><b>HIPÓTESIS</b><span>Oportunidades de crecimiento.</span></div><div class="field"><b>EXPERIMENTOS</b><span>Acciones observables y medibles.</span></div><div class="field"><b>APRENDIZAJES</b><span>Conclusiones que cambian decisiones.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">08 · SECUENCIA RECOMENDADA</div><h2>Primero entender. Después construir. Finalmente evaluar.</h2>
+      <div class="priorities" role="img" aria-label="Siete prioridades recomendadas para la siguiente etapa">
+        <article class="priority"><div class="pnum">P1</div><strong>Diagnóstico</strong><span>Cuatro proyectos</span></article><article class="priority"><div class="pnum">P2</div><strong>Auditoría</strong><span>Accesos y datos</span></article><article class="priority"><div class="pnum">P3</div><strong>Artist Brain</strong><span>Estructura común</span></article><article class="priority"><div class="pnum">P4</div><strong>Problema</strong><span>Growth concreto</span></article><article class="priority"><div class="pnum">P5</div><strong>Workflow</strong><span>Mínimo viable</span></article><article class="priority"><div class="pnum">P6</div><strong>Validación</strong><span>OpenClaw</span></article><article class="priority"><div class="pnum">P7</div><strong>Experimento</strong><span>Evidencia real</span></article>
+      </div>
+      <p class="caption">Esta secuencia es una recomendación para diseñar la siguiente etapa; todavía no es un calendario cerrado.</p>
+    </section>
+
+    <section class="section">
+      <div class="kicker">09 · CÓMO EVALUAREMOS EL PILOTO</div><h2>Siete dimensiones, todavía sin metas inventadas</h2>
+      <p class="intro">Las metas numéricas deberán definirse después de conocer las líneas base. Desde ahora sí podemos dejar claro qué dimensiones decidirán si el piloto crea valor.</p>
+      <div class="success"><article class="success-item"><b>A</b><strong>CAPACIDAD</strong><span>Ejecuta trabajos reales.</span></article><article class="success-item"><b>B</b><strong>CALIDAD</strong><span>Resultados utilizables.</span></article><article class="success-item"><b>C</b><strong>AUTONOMÍA</strong><span>Menor presencia constante.</span></article><article class="success-item"><b>D</b><strong>EFICIENCIA</strong><span>Costo por resultado útil.</span></article><article class="success-item"><b>E</b><strong>APRENDIZAJE</strong><span>Cambia decisiones futuras.</span></article><article class="success-item"><b>F</b><strong>IMPACTO</strong><span>Mejora señales musicales.</span></article><article class="success-item"><b>G</b><strong>TRANSFERENCIA</strong><span>Otro operador puede continuar.</span></article></div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">10 · TRES CONTRADICCIONES QUE DEBEMOS VIGILAR</div><h2>La investigación también puso límites</h2>
+      <div class="contradictions">
+        <article class="contradiction"><b>TECNOLOGÍA VS. PROBLEMA</b><h3>Podemos construir antes de entender</h3><p>Una capacidad sofisticada podría terminar resolviendo problemas que nuestros artistas no tienen.</p><p class="turn"><strong>Respuesta:</strong> diagnóstico primero.</p></article>
+        <article class="contradiction"><b>MEMORIA VS. APRENDIZAJE</b><h3>Guardar no significa aprender</h3><p>Solo hay aprendizaje cuando una conclusión validada modifica una decisión posterior.</p><p class="turn"><strong>Respuesta:</strong> learning loop explícito.</p></article>
+        <article class="contradiction"><b>AUTONOMÍA VS. DEPENDENCIA</b><h3>La operación todavía vive en Alejandro</h3><p>Sin documentar el criterio, la agencia puede ser tecnológica y seguir siendo intransferible.</p><p class="turn"><strong>Respuesta:</strong> criterios y procesos portables.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="deliverable"><div class="deliverable-head"><div><div class="kicker">ENTREGABLE FINAL · SEMANA 1</div><h2>F5 Intelligence Brief #01</h2><p class="intro" style="margin:0">Primera síntesis estratégica de la futura agencia: tesis de crecimiento, arquitectura conceptual, decisiones, brechas y secuencia recomendada para convertir investigación en evidencia.</p></div><span class="delivered">ENTREGADO</span></div></div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">11 · CIERRE FORMAL DEL DÍA 6</div><h2>Lo que incorporamos al criterio de F5</h2>
+      <div class="closure">
+        <article><h3>QUÉ APRENDIMOS</h3><p>F5 no es una colección de tácticas ni de agentes. Empieza a definirse como un sistema modular que conecta conocimiento del artista, inteligencia de mercado, ejecución, medición y aprendizaje.</p></article>
+        <article><h3>QUÉ NOS SORPRENDIÓ / CONTRADIJO</h3><p>La primera capacidad prioritaria no es producir contenido ni automatizar redes. Es comprender a cada artista. Además, la coherencia del modelo aún no prueba viabilidad comercial, tecnológica ni musical.</p></article>
+        <article><h3>QUÉ SIGNIFICA PARA F5</h3><p>La ventaja potencial estará en aprender mejor y más rápido qué transforma exposición en adopción, no simplemente en ejecutar más actividades con IA.</p></article>
+        <article><h3>QUÉ TODAVÍA NO SABEMOS</h3><p>Estado real de los cuatro proyectos, accesos y datos disponibles, nichos prioritarios, confiabilidad de OpenClaw, costos operativos, presupuesto y modelo de sostenibilidad.</p></article>
+        <article><h3>QUÉ DECIDIMOS POR AHORA</h3><p>Construir primero F5 Artist Intelligence; diagnosticar los cuatro proyectos; auditar accesos y datos; seleccionar un problema concreto; probar un workflow mínimo; validar OpenClaw y ejecutar un primer experimento medible.</p></article>
+      </div>
+      <p class="footer-note">Este brief cierra la etapa ENTENDER. Las decisiones son provisionales para orientar el piloto y deberán actualizarse cuando aparezca evidencia real de los cuatro proyectos.</p>
+    </section>
+  </main>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"a8e65bddb01549f18507d0520f7419ab"}'></script>
+</body>
+</html>
