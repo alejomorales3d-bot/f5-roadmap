@@ -282,7 +282,11 @@
             {href:'day-09-askariz-sonic-map.html', title:'AUDITORÍA COMPLETA · ASKARIZ — ARTIST SONIC & REFERENCE MAP v0.1', description:'Nueve audios: tempo, estructura, tres polos de catálogo, referencias, audiencias y pruebas prioritarias.'},
             {href:'day-09-night-sonic-map.html', title:'AUDITORÍA COMPLETA · NIGHT TEMPTATIONS — ARTIST SONIC & REFERENCE MAP v0.1', description:'Cinco audios: huella acústica, funciones del catálogo, arquitectura de referencias, versionado y pruebas de posicionamiento.'}
           ],
-          '2026-10-16': {href:'day-11-pilot-brief-v04.html', title:'INFORME FULL · F5 PILOT BRIEF v0.4', description:'Documento completo de decisión: objetivo, diseño A/B, alcance, plan de 90 días, experimentos, medición, medios, Spotify, presupuesto, horas, gobernanza, riesgos y autorizaciones.'}
+          '2026-10-16': [
+            {href:'day-11-pilot-brief-v04.html', title:'INFORME FULL · F5 PILOT BRIEF v0.4', description:'Documento completo de decisión: objetivo, diseño A/B, alcance, plan de 90 días, experimentos, medición, medios, Spotify, presupuesto, horas, gobernanza, riesgos y autorizaciones.'},
+            {href:'day-11-askariz-youtube-report.html', title:'INFORME INDIVIDUAL · ASKARIZ — YOUTUBE INTELLIGENCE 2015–2026', description:'Serie anual completa, tablas originales, consumo, suscripción y mapa interactivo de cobertura geográfica por ciudades.'},
+            {href:'day-11-night-youtube-report.html', title:'INFORME INDIVIDUAL · NIGHT TEMPTATIONS — YOUTUBE INTELLIGENCE 2021–2026', description:'Pico 2022, divergencia de suscripción, cadencia, tablas originales y mapa interactivo de la evolución geográfica.'}
+          ]
         };
         const extra = additionalReports[d.id];
         const additionalReport = extra ? (Array.isArray(extra) ? extra : [extra]).map(item => `<a class="f5-report-link additional" href="${item.href}"><div><strong>${item.title}</strong><span>${item.description}</span></div><b>ABRIR →</b></a>`).join('') : '';
