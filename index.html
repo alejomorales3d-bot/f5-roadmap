@@ -88,19 +88,21 @@
     #f5-roadmap-inline .f5-idea { padding: 12px 0; border-top: 1px solid #3a3b37; font-size: 13px; line-height: 1.45; color: #ddd; }
     #f5-roadmap-inline .f5-idea strong { display: block; color: #adff2f; font-size: 11px; letter-spacing: .06em; margin-bottom: 5px; }
     #f5-roadmap-inline .f5-side { display: grid; gap: 14px; align-self: start; padding-top: 26px; }
-    #f5-roadmap-inline .f5-money-tool { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 350px; padding: 19px; border: 1px solid #a88cff; border-radius: 17px; color: #fff; text-decoration: none; background: radial-gradient(circle at 100% 0%,rgba(255,255,255,.22),transparent 35%),linear-gradient(145deg,#6f4cff 0%,#3f2b88 55%,#251c4c 100%); box-shadow: 0 18px 42px rgba(67,44,142,.28); transition: transform .18s ease,box-shadow .18s ease; }
+    #f5-roadmap-inline .f5-money-tool { position: relative; overflow: hidden; display: grid; grid-template-rows: auto auto auto 48px auto; align-content: space-between; min-height: 350px; padding: 19px; border: 1px solid #a88cff; border-radius: 17px; color: #fff; text-decoration: none; background: radial-gradient(circle at 100% 0%,rgba(255,255,255,.22),transparent 35%),linear-gradient(145deg,#6f4cff 0%,#3f2b88 55%,#251c4c 100%); box-shadow: 0 18px 42px rgba(67,44,142,.28); transition: transform .18s ease,box-shadow .18s ease; }
     #f5-roadmap-inline .f5-money-tool:hover { transform: translateY(-3px); box-shadow: 0 24px 50px rgba(67,44,142,.38); }
     #f5-roadmap-inline .f5-tool-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
     #f5-roadmap-inline .f5-tool-label { font-size: 9px; letter-spacing: .12em; font-weight: 900; color: #ddd3ff; }
     #f5-roadmap-inline .f5-tool-arrow { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.16); font-size: 18px; }
-    #f5-roadmap-inline .f5-money-tool h2 { margin: 10px 0 7px; max-width: 215px; font-size: 21px; line-height: 1.02; letter-spacing: -.035em; }
+    #f5-roadmap-inline .f5-tool-intro { min-width: 0; }
+    #f5-roadmap-inline .f5-money-tool h2 { margin: 0 0 7px; max-width: 215px; font-size: 21px; line-height: 1.02; letter-spacing: -.035em; }
     #f5-roadmap-inline .f5-money-tool p { margin: 0; color: #ddd5f7; font-size: 11px; line-height: 1.45; }
-    #f5-roadmap-inline .f5-tool-total { margin: 18px 0 4px; font-size: 27px; line-height: 1; font-weight: 900; letter-spacing: -.04em; }
+    #f5-roadmap-inline .f5-tool-metric { padding-top: 2px; }
+    #f5-roadmap-inline .f5-tool-total { margin: 0 0 4px; font-size: 27px; line-height: 1; font-weight: 900; letter-spacing: -.04em; }
     #f5-roadmap-inline .f5-tool-usd { color: #c9baff; font-size: 11px; font-weight: 800; }
-    #f5-roadmap-inline .f5-tool-chart { height: 42px; display: flex; gap: 5px; align-items: end; margin: 15px 0 13px; }
+    #f5-roadmap-inline .f5-tool-chart { height: 48px; display: flex; gap: 5px; align-items: end; margin: 0; }
     #f5-roadmap-inline .f5-tool-chart i { flex: 1; border-radius: 4px 4px 1px 1px; background: rgba(255,255,255,.82); }
     #f5-roadmap-inline .f5-tool-chart i:nth-child(1){height:68%} #f5-roadmap-inline .f5-tool-chart i:nth-child(2){height:44%} #f5-roadmap-inline .f5-tool-chart i:nth-child(3){height:100%;background:#adff2f} #f5-roadmap-inline .f5-tool-chart i:nth-child(4){height:8%}
-    #f5-roadmap-inline .f5-tool-foot { display: flex; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 11px; border-top: 1px solid rgba(255,255,255,.2); color: #ddd3ff; font-size: 9px; font-weight: 800; }
+    #f5-roadmap-inline .f5-tool-foot { display: flex; justify-content: space-between; align-items: end; gap: 8px; padding-top: 11px; border-top: 1px solid rgba(255,255,255,.2); color: #ddd3ff; font-size: 9px; font-weight: 800; }
     @media (max-width: 760px) {
       #f5-roadmap-inline .f5-body { padding-top: 34px; }
       #f5-roadmap-inline .f5-top { align-items: start; flex-direction: column; }
@@ -195,10 +197,8 @@
         <aside class="f5-side" aria-label="Herramientas transversales y Parking Lot">
           <a class="f5-money-tool" href="f5-monetization-lab.html" aria-label="Abrir Simulador interactivo F5 y reporte de monetización">
             <div class="f5-tool-top"><div class="f5-tool-label">HERRAMIENTA TRANSVERSAL · TODAS LAS SEMANAS</div><div class="f5-tool-arrow">↗</div></div>
-            <h2>Monetización Lab</h2>
-            <p>Simulador interactivo F5 · USD + COP, inventario económico y escenarios de crecimiento.</p>
-            <div class="f5-tool-total">$3.472.319 COP</div>
-            <div class="f5-tool-usd">US$1.088 · escenario de referencia</div>
+            <div class="f5-tool-intro"><h2>Monetización Lab</h2><p>Simulador interactivo F5 · USD + COP, inventario económico y escenarios de crecimiento.</p></div>
+            <div class="f5-tool-metric"><div class="f5-tool-total">$3.472.319 COP</div><div class="f5-tool-usd">US$1.088 · escenario de referencia</div></div>
             <div class="f5-tool-chart" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
             <div class="f5-tool-foot"><span>TRM $3.191,47</span><span>EDITAR + SIMULAR →</span></div>
           </a>
