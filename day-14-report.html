@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e211d">
+  <meta name="description" content="BM-G01 Growth Experiment v0.1 · Baby Maestri · 6 de noviembre de 2026">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23adff2f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%2320211f'%3EF5%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="baby-maestri-report.css">
+  <title>Baby Maestri · BM-G01 Growth Experiment</title>
+  <style>
+    :root{--ink:#f4f4ee;--muted:#b6b8b0;--line:#363a33;--panel:#20241f;--panel2:#272d24;--green:#a8ff2f;--blue:#7ec1ff;--cream:#eadba8;--purple:#b89cff;--coral:#ff876f}
+    *{box-sizing:border-box} body{margin:0;background:#10120f;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+    .page{max-width:1180px;margin:auto;padding:66px 28px 100px}.kicker{font-size:12px;letter-spacing:.15em;font-weight:850;color:#b9bbb4}.hero h1{max-width:1040px;margin:16px 0 22px;font-size:clamp(48px,8vw,96px);line-height:.88;letter-spacing:-.065em}.hero h1 em{font-style:normal;color:var(--green)}
+    .lede{max-width:820px;color:#c6c8c0;font-size:19px;line-height:1.55}.pills{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 42px}.pill{padding:9px 13px;border:1px solid #3b4038;border-radius:99px;background:#20231f;font-size:12px;font-weight:800}.pill.on{background:var(--green);color:#16200e;border-color:var(--green)}
+    .executive{border-left:5px solid var(--green);background:linear-gradient(135deg,#222820,#1c211b);border-radius:0 18px 18px 0;padding:28px 30px;margin:0 0 70px}.executive b{display:block;color:var(--green);font-size:12px;letter-spacing:.12em;margin-bottom:10px}.executive h2{font-size:clamp(25px,4vw,40px);line-height:1.12;margin:0 0 12px;letter-spacing:-.035em}.executive p{margin:0;color:#c0c4ba;line-height:1.6}
+    section{padding:62px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);gap:35px;align-items:end;margin-bottom:30px}.section-head h2{font-size:clamp(34px,5.5vw,64px);line-height:.98;letter-spacing:-.055em;margin:10px 0 0}.section-head p{margin:0;color:var(--muted);line-height:1.58}
+    .grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.card{background:var(--panel);border:1px solid #394037;border-radius:16px;padding:22px}.card .num{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.1em}.card h3{font-size:21px;margin:13px 0 8px}.card p{margin:0;color:#bfc2b9;line-height:1.5;font-size:14px}.card.primary{border-color:var(--green);background:linear-gradient(145deg,#27351d,#1d231a)}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}.flow .step{position:relative;min-height:180px;background:var(--panel);border:1px solid #3a4038;border-radius:16px;padding:20px}.flow .step:not(:last-child):after{content:'→';position:absolute;right:-20px;top:50%;color:#6e7568;font-size:25px}.flow strong{display:block;font-size:17px;margin:14px 0 7px}.flow span{color:#aeb2a8;font-size:13px;line-height:1.45}.flow .active{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+    .platform{position:relative;overflow:hidden}.platform:before{content:'';position:absolute;left:0;right:0;top:0;height:5px}.platform.instagram:before{background:var(--purple)}.platform.youtube:before{background:var(--coral)}.platform.spotify:before{background:var(--green)}.platform .role{font-size:12px;letter-spacing:.1em;font-weight:850;color:#adb1a7}.platform h3{font-size:27px}.platform ul{padding-left:18px;color:#c4c7bf;line-height:1.7;margin:15px 0 0}
+    .priority{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}.priority-main{background:linear-gradient(145deg,#2d401f,#1b2218);border:1px solid var(--green);border-radius:18px;padding:28px}.priority-main .big{font-size:clamp(38px,6vw,68px);font-weight:900;letter-spacing:-.055em;line-height:.95}.priority-main p{color:#cbd1c5;line-height:1.55;max-width:650px}.priority-side{display:grid;gap:14px}.priority-side .card{display:flex;flex-direction:column;justify-content:center}.priority-side strong{font-size:24px}.priority-side span{color:#aeb2a8;margin-top:7px;font-size:13px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.kpi{background:var(--panel);border:1px solid #3c4238;border-radius:18px;padding:24px}.kpi-top{display:flex;justify-content:space-between;align-items:center}.kpi-index{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#17200f;font-weight:900}.kpi-tag{font-size:10px;font-weight:900;letter-spacing:.1em;color:#99a091}.kpi h3{font-size:25px;margin:20px 0 8px}.kpi p{color:#b9bdb4;line-height:1.55}.signal-bars{margin-top:18px;display:grid;gap:9px}.signal{display:grid;grid-template-columns:105px 1fr;gap:10px;align-items:center;font-size:11px;color:#aeb2a8}.track{height:8px;background:#383d36;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--green)}.w95{width:95%}.w78{width:78%}.w62{width:62%}
+    .story{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.frame{min-height:210px;background:var(--panel);border:1px solid #394037;border-radius:16px;padding:20px;display:flex;flex-direction:column}.frame .time{font-size:12px;font-weight:900;color:var(--green)}.frame h3{font-size:20px;margin:18px 0 8px}.frame p{font-size:13px;color:#b9bdb4;line-height:1.48;margin:0}.frame .brand{margin-top:auto;padding-top:18px;font-size:11px;font-weight:850;color:var(--cream)}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.moment{position:relative;padding:24px 20px 22px;background:var(--panel);border:1px solid #3c4238;border-radius:16px}.moment .dot{width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(168,255,47,.1)}.moment h3{font-size:21px;margin:22px 0 6px}.moment p{color:#b9bdb4;font-size:13px;line-height:1.5;margin:0}
+    .table-wrap{overflow-x:auto;border:1px solid #394037;border-radius:16px}.data-table{width:100%;border-collapse:collapse;min-width:760px;background:#171a16}.data-table th,.data-table td{text-align:left;padding:16px;border-bottom:1px solid #343a32;vertical-align:top}.data-table th{font-size:11px;letter-spacing:.07em;background:#282e25}.data-table td{font-size:13px;color:#c6c9c1;line-height:1.45}.data-table tr:last-child td{border-bottom:0}.status{display:inline-flex;padding:5px 8px;border-radius:99px;font-weight:850;font-size:10px;background:#343a31}.status.done{background:#30451f;color:var(--green)}.status.pending{background:#423f2b;color:#f3dc8d}
+    .matrix{display:grid;grid-template-columns:1fr 1fr;gap:13px}.quadrant{border-radius:17px;padding:23px;background:var(--panel);border:1px solid #3b4138}.quadrant.good{border-color:var(--green)}.quadrant h3{margin:8px 0;font-size:20px}.quadrant p{color:#b9bdb4;font-size:14px;line-height:1.5}.quadrant b{display:block;margin-top:16px;color:var(--green);font-size:12px;letter-spacing:.06em}
+    .board{display:grid;grid-template-columns:1fr 1fr;gap:14px}.board .table-wrap{grid-column:1/-1}.note{padding:18px 20px;border-left:4px solid var(--cream);background:#262820;color:#c8c8bb;line-height:1.55;border-radius:0 12px 12px 0}.insight{padding:26px;background:linear-gradient(145deg,#2a351f,#20261d);border:1px solid var(--green);border-radius:18px}.insight span{color:var(--green);font-size:11px;letter-spacing:.1em;font-weight:900}.insight p{font-size:clamp(23px,3vw,36px);font-weight:800;line-height:1.18;letter-spacing:-.025em;margin:12px 0 0}
+    .next{display:grid;grid-template-columns:.78fr 1.22fr;gap:16px}.next-date{background:var(--green);color:#15200d;border-radius:18px;padding:28px}.next-date .day{font-size:70px;font-weight:950;line-height:.85;letter-spacing:-.06em}.next-date strong{display:block;margin-top:16px;font-size:21px}.next-actions{background:var(--panel);border:1px solid #3b4138;border-radius:18px;padding:26px}.next-actions ol{margin:0;padding-left:22px;color:#c7cac1;line-height:1.75}.closing{margin-top:18px;padding:22px;border-radius:16px;background:#252b22;border-left:5px solid var(--green)}.closing strong{color:var(--green)}
+    footer{padding-top:34px;color:#8f9489;font-size:12px;line-height:1.55}
+    @media(max-width:850px){.section-head{grid-template-columns:1fr}.g3,.g4,.kpis,.story,.timeline{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow .step{min-height:0}.flow .step:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-26px}.priority,.next{grid-template-columns:1fr}.board{grid-template-columns:1fr}}
+    @media(max-width:560px){.page{padding:44px 17px 75px}.hero h1{font-size:50px}.lede{font-size:16px}.executive{padding:22px}.g3,.g4,.kpis,.story,.timeline,.matrix{grid-template-columns:1fr}.section-head h2{font-size:40px}.card{padding:19px}.table-wrap{margin-right:-17px;border-radius:14px 0 0 14px}.data-table th,.data-table td{padding:13px}.priority-main .big{font-size:43px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><div class="mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><small>Growth Intelligence · Baby Maestri</small></div></div><a class="back" href="./?week=week-05">← VOLVER AL ROADMAP</a></div></header>
+  <main class="page">
+    <div class="hero">
+      <div class="kicker">INFORME GENERAL · SEMANA 5 · DÍA 3 · 6 NOV 2026</div>
+      <h1>Ya no solo estudiamos el crecimiento. <em>Diseñamos cómo aprender de él.</em></h1>
+      <p class="lede">BM-G01 convierte la primera pieza audiovisual de Baby Maestri en un experimento con objetivo, indicadores, ventanas de observación y decisiones definidas antes de publicar.</p>
+      <div class="pills"><span class="pill on">SEMANA 5 CERRADA</span><span class="pill">BM-G01 APROBADO</span><span class="pill">ORGÁNICO PRIMERO</span><span class="pill">BM-01 BRIEF v0.2</span></div>
+    </div>
+
+    <div class="executive"><b>CONCLUSIÓN EJECUTIVA</b><h2>El primer objetivo no es demostrar ventas ni atribuir streams: es comprobar si Baby Maestri puede llegar a personas nuevas, sostener su atención y despertar interés por la marca.</h2><p>Spotify permanece como resultado secundario y contexto musical. La pauta se reserva para un experimento posterior. El próximo paso es operativo: producir BM-01 v0.2, completar referencias históricas y preparar canales, derechos, enlaces y medición.</p></div>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">01 · LO QUE CAMBIÓ ESTA SEMANA</div><h2>Tres días, tres capas de un mismo sistema</h2></div><p>La secuencia evita producir sin criterio y medir sin pregunta. Cada día cerró una incertidumbre distinta.</p></div>
+      <div class="flow">
+        <div class="step"><span class="kicker">04 NOV</span><strong>Investigar</strong><span>Demanda, catálogo, plataformas y brecha de reconocimiento.</span></div>
+        <div class="step"><span class="kicker">05 NOV</span><strong>Definir</strong><span>Universo de marca, personalidad y concepto creativo.</span></div>
+        <div class="step active"><span class="kicker">06 NOV</span><strong>Experimentar</strong><span>Objetivo, KPIs, protocolo y reglas de decisión.</span></div>
+        <div class="step"><span class="kicker">9–15 NOV</span><strong>Activar</strong><span>Producir, preparar perfiles y publicar si el gate se aprueba.</span></div>
+        <div class="step"><span class="kicker">+7 DÍAS</span><strong>Aprender</strong><span>Comparar, interpretar y decidir qué repetir o reformular.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">02 · ARQUITECTURA DE CRECIMIENTO</div><h2>Una estrategia; tres plataformas con funciones distintas</h2></div><p>No se comparan las plataformas como si midieran lo mismo. Se conectan dentro de un recorrido propuesto, sin asumir que toda persona llegará hasta Spotify.</p></div>
+      <div class="grid g3">
+        <article class="card platform instagram"><div class="role">DESCUBRIMIENTO + IDENTIDAD</div><h3>Instagram</h3><p>Presentar el universo, provocar interacción y observar interés por la marca.</p><ul><li>Reel BM-01</li><li>Visitas al perfil</li><li>Guardados y compartidos</li></ul></article>
+        <article class="card platform youtube"><div class="role">DESCUBRIMIENTO AUDIOVISUAL</div><h3>YouTube</h3><p>Ampliar exposición audiovisual y observar calidad de atención.</p><ul><li>Short adaptado</li><li>Tiempo visto</li><li>Nuevos espectadores, si está disponible</li></ul></article>
+        <article class="card platform spotify"><div class="role">ESCUCHA + RECURRENCIA</div><h3>Spotify</h3><p>Recibir exploración musical y observar señales secundarias sin atribución automática.</p><ul><li>Clics identificables</li><li>Guardados</li><li>Streams activos como contexto</li></ul></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">03 · DECISIÓN PRINCIPAL</div><h2>BM-G01 prioriza descubrimiento y reconocimiento</h2></div><p>Un experimento debe tener una prioridad central para que sus resultados puedan interpretarse.</p></div>
+      <div class="priority">
+        <div class="priority-main"><div class="kicker">OBJETIVO PRINCIPAL · APROBADO</div><div class="big">Nuevas personas → interés por Baby Maestri</div><p>Comprobar si una composición reconocible, una ejecución audiovisual coherente y códigos visibles de marca atraen públicos nuevos y provocan una acción adicional.</p></div>
+        <div class="priority-side"><div class="card"><span>OBJETIVO SECUNDARIO</span><strong>Exploración musical</strong><span>Clics y señales de Spotify se registran, pero no definen por sí solos el éxito.</span></div><div class="card"><span>NO ES EL OBJETIVO</span><strong>Demostrar causalidad</strong><span>Un video en dos plataformas no prueba que la nueva dirección cause crecimiento.</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">04 · SISTEMA DE MEDICIÓN</div><h2>Tres KPI responden tres preguntas diferentes</h2></div><p>El alcance abre la lectura; la atención y el interés explican si ese alcance tiene calidad.</p></div>
+      <div class="kpis">
+        <article class="kpi"><div class="kpi-top"><div class="kpi-index">01</div><span class="kpi-tag">INDICADOR PRINCIPAL</span></div><h3>Descubrimiento</h3><p>¿Llegamos más allá de la comunidad actual?</p><div class="signal-bars"><div class="signal"><span>No seguidores</span><div class="track"><div class="fill w95"></div></div></div><div class="signal"><span>Nuevos viewers</span><div class="track"><div class="fill w78"></div></div></div></div></article>
+        <article class="kpi"><div class="kpi-top"><div class="kpi-index">02</div><span class="kpi-tag">CALIDAD DEL ALCANCE</span></div><h3>Interés de marca</h3><p>¿La exposición provoca una acción adicional hacia Baby Maestri?</p><div class="signal-bars"><div class="signal"><span>Visitas perfil</span><div class="track"><div class="fill w78"></div></div></div><div class="signal"><span>Nuevos follows</span><div class="track"><div class="fill w62"></div></div></div></div></article>
+        <article class="kpi"><div class="kpi-top"><div class="kpi-index">03</div><span class="kpi-tag">CALIDAD CREATIVA</span></div><h3>Atención</h3><p>¿El contenido retiene, se guarda o merece compartirse?</p><div class="signal-bars"><div class="signal"><span>Retención</span><div class="track"><div class="fill w95"></div></div></div><div class="signal"><span>Guardados</span><div class="track"><div class="fill w62"></div></div></div></div></article>
+      </div>
+      <div class="note" style="margin-top:14px"><strong>Lectura correcta:</strong> las barras representan la jerarquía visual del sistema, no resultados observados. Los valores reales se incorporarán después de publicar. Alcance, visitas y seguidores son aproximaciones al conocimiento de marca; no demuestran recuerdo espontáneo.</div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">05 · LÍNEA BASE SIN NÚMEROS INVENTADOS</div><h2>Compararemos cada canal contra su propia historia</h2></div><p>La referencia será la mediana de piezas comparables, no una publicación excepcional ni una cifra aspiracional arbitraria.</p></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>Decisión metodológica</th><th>Instagram</th><th>YouTube</th><th>Por qué importa</th></tr></thead><tbody>
+        <tr><td>Unidad comparable</td><td>8–12 Reels previos, si existen</td><td>Shorts previos comparables</td><td>No mezclar formatos o universos de distribución distintos.</td></tr>
+        <tr><td>Estadístico</td><td>Mediana histórica</td><td>Mediana histórica</td><td>Reduce el efecto de una pieza atípica.</td></tr>
+        <tr><td>Ventana</td><td>+48 h y +7 días</td><td>+48 h y +7 días</td><td>Permite lecturas temporales equivalentes.</td></tr>
+        <tr><td>Estado</td><td><span class="status pending">POR INCORPORAR</span></td><td><span class="status pending">POR INCORPORAR</span></td><td>Si la muestra no alcanza, BM-G01 será calibración, no prueba concluyente.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">06 · AJUSTE CREATIVO</div><h2>BM-01 v0.2 hace visible la marca antes del final</h2></div><p>La pieza no debe ser una animación disfrutable pero anónima. La identidad entra desde los primeros segundos y permanece con discreción.</p></div>
+      <div class="story">
+        <article class="frame"><div class="time">0–3 S</div><h3>Código inmediato</h3><p>La nota musical histórica introduce un código visual reconocible de Baby Maestri.</p><div class="brand">IDENTIDAD DESDE EL INICIO</div></article>
+        <article class="frame"><div class="time">3–10 S</div><h3>Nace el universo</h3><p>La música transforma el mundo ilustrado con colores y trazos coherentes.</p><div class="brand">MÚSICA PROVOCA ACCIÓN</div></article>
+        <article class="frame"><div class="time">10–15 S</div><h3>Expresión principal</h3><p>El universo alcanza su momento visual y conserva una identificación discreta.</p><div class="brand">MARCA SIN INTERRUMPIR</div></article>
+        <article class="frame"><div class="time">15–18 S</div><h3>Cierre auténtico</h3><p>Logotipo original e invitación a conocer Baby Maestri; Spotify queda accesible como ruta secundaria.</p><div class="brand">DESCUBRIR, NO FORZAR CLIC</div></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">07 · PROTOCOLO</div><h2>La observación comienza antes de publicar</h2></div><p>Cada hito tiene una función distinta. El control a 48 horas detecta problemas; la primera decisión ocurre a 7 días.</p></div>
+      <div class="timeline">
+        <article class="moment"><div class="dot"></div><h3>T−1 · Preparar</h3><p>Calidad, identidad, derechos, biografías, enlaces y disponibilidad de métricas.</p></article>
+        <article class="moment"><div class="dot"></div><h3>Día 0 · Publicar</h3><p>Registrar hora, enlace, versión creativa y condiciones de distribución.</p></article>
+        <article class="moment"><div class="dot"></div><h3>+48 h · Controlar</h3><p>Revisar errores, alcance inicial, retención e interacción sin declarar éxito definitivo.</p></article>
+        <article class="moment"><div class="dot"></div><h3>+7 días · Decidir</h3><p>Comparar con la historia y elegir entre repetir, ajustar o reformular.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">08 · MATRIZ DE APRENDIZAJE</div><h2>Los resultados ya tienen una decisión asociada</h2></div><p>Evita reinterpretar el experimento después de conocer el resultado y obliga a mirar distribución, atención e interés en conjunto.</p></div>
+      <div class="matrix">
+        <article class="quadrant good"><div class="kicker">ALCANCE ALTO · INTERÉS ALTO</div><h3>Señal favorable</h3><p>El contenido llega a nuevas personas y provoca una acción adicional hacia la marca.</p><b>DECISIÓN · REPETIR EL TERRITORIO</b></article>
+        <article class="quadrant"><div class="kicker">ALCANCE ALTO · INTERÉS BAJO</div><h3>Exposición superficial</h3><p>La distribución funciona, pero la narrativa o identificación no convierten atención en interés.</p><b>DECISIÓN · REVISAR MARCA Y CIERRE</b></article>
+        <article class="quadrant"><div class="kicker">ALCANCE BAJO · RETENCIÓN ALTA</div><h3>Experiencia prometedora</h3><p>La pieza puede funcionar, pero su apertura o distribución limita el descubrimiento.</p><b>DECISIÓN · PROBAR OTRA APERTURA O DISTRIBUCIÓN</b></article>
+        <article class="quadrant"><div class="kicker">ALCANCE BAJO · RETENCIÓN BAJA</div><h3>Sin señal suficiente</h3><p>La propuesta todavía no justifica más inversión ni amplificación.</p><b>DECISIÓN · REFORMULAR ANTES DE ESCALAR</b></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">09 · TABLERO BM-G01</div><h2>Una ficha común; métricas específicas por plataforma</h2></div><p>Los guiones son campos pendientes, no ceros. El tablero se completa con la publicación y sus cortes temporales.</p></div>
+      <div class="board">
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Indicador</th><th>Instagram</th><th>YouTube</th><th>Lectura</th></tr></thead><tbody>
+          <tr><td>Fecha / versión</td><td>Pendiente</td><td>Pendiente</td><td>Trazabilidad operativa</td></tr>
+          <tr><td>Alcance / espectadores nuevos</td><td>—</td><td>—</td><td>Descubrimiento</td></tr>
+          <tr><td>Visualizaciones</td><td>—</td><td>—</td><td>Volumen, no calidad por sí solo</td></tr>
+          <tr><td>Retención / tiempo visto</td><td>—</td><td>—</td><td>Atención</td></tr>
+          <tr><td>Guardados / compartidos</td><td>—</td><td>Según disponibilidad</td><td>Valor percibido</td></tr>
+          <tr><td>Interés por perfil / canal</td><td>—</td><td>—</td><td>Interés de marca</td></tr>
+          <tr><td>Referencia histórica</td><td>Por incorporar</td><td>Por incorporar</td><td>Contexto de comparación</td></tr>
+          <tr><td>Evaluación +7 días</td><td>Pendiente</td><td>Pendiente</td><td>Repetir, ajustar o reformular</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="note" style="margin-top:14px">Los clics a Spotify se registrarán cuando exista un enlace identificable. Los cambios en oyentes o streams se observarán como contexto, sin atribuirlos automáticamente a BM-01.</div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">10 · GOBERNANZA</div><h2>El laboratorio produce; estrategia interpreta y decide</h2></div><p>La separación conserva trazabilidad y evita que prompts, versiones y ajustes operativos sustituyan la evaluación empresarial.</p></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>Frente</th><th>Responsable</th><th>Salida esperada</th><th>Estado</th></tr></thead><tbody>
+        <tr><td>Estrategia e hipótesis</td><td>PLAN F5 CRECIMIENTO</td><td>BM-G01 + reglas de decisión</td><td><span class="status done">CERRADO</span></td></tr>
+        <tr><td>Dirección y producción</td><td>F5 LAB · Baby Maestri</td><td>BM-01 Brief v0.2 + prototipo</td><td><span class="status pending">SIGUIENTE</span></td></tr>
+        <tr><td>Generación audiovisual</td><td>Buzzy + herramientas autorizadas</td><td>Activo con costo y limitaciones registrados</td><td><span class="status pending">POR EJECUTAR</span></td></tr>
+        <tr><td>Aprobación</td><td>Dirección F5</td><td>Gate creativo y presupuesto</td><td><span class="status pending">PENDIENTE</span></td></tr>
+        <tr><td>Publicación</td><td>Administrador autorizado</td><td>Versiones, enlaces y hora registrada</td><td><span class="status pending">9–15 NOV</span></td></tr>
+        <tr><td>Medición</td><td>PLAN F5 CRECIMIENTO</td><td>Controles +48 h y +7 días</td><td><span class="status pending">DESPUÉS DE PUBLICAR</span></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">11 · INSIGHTS DEL DÍA</div><h2>Lo importante no fue añadir más contenido</h2></div><p>El avance consistió en reducir ambigüedad y convertir una dirección creativa en una pregunta que puede producir aprendizaje.</p></div>
+      <div class="grid g3">
+        <div class="insight"><span>INSIGHT 01</span><p>La identidad debe aparecer antes de que la audiencia abandone el video.</p></div>
+        <div class="insight"><span>INSIGHT 02</span><p>El alcance sin interés puede ser distribución, no construcción de marca.</p></div>
+        <div class="insight"><span>INSIGHT 03</span><p>La pauta no debe ocultar una pieza orgánica que todavía no funciona.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="kicker">12 · RUTA DEL SIGUIENTE DÍA</div><h2>El lunes 9 empieza la preparación operativa</h2></div><p>La investigación estratégica está suficientemente cerrada. El sistema ahora necesita producción, referencias y condiciones de publicación verificables.</p></div>
+      <div class="next">
+        <div class="next-date"><div class="day">09</div><strong>LUNES · NOVIEMBRE</strong><p>BM-G01 Launch Readiness Pack v0.1</p></div>
+        <div class="next-actions"><ol><li>Trasladar BM-01 Brief v0.2 al F5 LAB y cerrar el gate creativo.</li><li>Completar medianas históricas comparables de Instagram y YouTube.</li><li>Confirmar derechos de la grabación, biografías, enlaces y acceso a métricas.</li><li>Registrar fecha, responsable, versión y condiciones del despliegue orgánico.</li></ol></div>
+      </div>
+      <div class="closing"><strong>SEMANA 5 · CERRADA.</strong> F5 ya tiene una línea base, una dirección de marca y un experimento medible. El siguiente aprendizaje no vendrá de otra conversación conceptual, sino de ejecutar BM-01 con rigor y observar qué ocurre.</div>
+    </section>
+
+    <footer><strong>Fuentes y límites.</strong> Síntesis del trabajo del 6 de noviembre de 2026 en “🧾 PLAN F5 CRECIMIENTO”, conectada con los informes del 4 y 5 de noviembre. No hay resultados de campaña: las barras del sistema KPI expresan jerarquía, no magnitud observada. Las referencias históricas concretas de Instagram y YouTube siguen pendientes de incorporación. Una sola pieza publicada en dos plataformas no permite atribución causal ni valida por sí sola recuerdo de marca.</footer>
+  </main>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"a8e65bddb01549f18507d0520f7419ab"}'></script>
+</body>
+</html>
