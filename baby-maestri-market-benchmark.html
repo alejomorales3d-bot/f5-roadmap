@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10120f">
+  <meta name="description" content="Baby Maestri Market Benchmark v0.1 · 9 de noviembre de 2026">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23adff2f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%2320211f'%3EF5%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="baby-maestri-report.css">
+  <title>Baby Maestri · Market Benchmark v0.1</title>
+  <style>
+    :root{--ink:#10120f;--panel:#1e211c;--panel2:#282d25;--line:#3d4338;--lime:#adff2f;--aqua:#65e4d2;--violet:#c3a5ff;--sun:#f3d16f;--coral:#ff8f78;--muted:#b7bcb1}
+    body{background:radial-gradient(circle at 84% 3%,rgba(195,165,255,.11),transparent 27%),radial-gradient(circle at 9% 32%,rgba(101,228,210,.07),transparent 23%),var(--ink)}
+    .hero h1 em{font-style:normal;color:var(--lime)}
+    .executive{background:linear-gradient(135deg,#26311e,#1d231a)}.executive b{color:var(--lime)}
+    .thesis{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.thesis-main{min-height:400px;padding:34px;border:1px solid #64843c;border-radius:21px;background:linear-gradient(145deg,#26351e,#1b2118);display:flex;flex-direction:column;justify-content:space-between}.thesis-main strong{display:block;max-width:690px;font-size:clamp(38px,5.8vw,68px);line-height:.94;letter-spacing:-.06em}.thesis-main span{max-width:700px;color:#d2d7cd;font-size:16px}.thesis-side{display:grid;gap:12px}.signal{padding:24px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.signal b{display:block;color:var(--aqua);font-size:10px;letter-spacing:.1em}.signal strong{display:block;margin:11px 0 7px;font-size:22px;line-height:1.1}.signal p{margin:0;color:var(--muted);font-size:13px}
+    .models{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.model{position:relative;min-height:340px;padding:24px;border-radius:18px;background:var(--panel);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}.model:before{content:'';position:absolute;inset:0 0 auto;height:5px;background:var(--accent)}.model .number{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#151711;font-weight:950}.model .type{margin-top:20px;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.1em}.model h3{margin:9px 0 8px;font-size:25px;line-height:1}.model p{margin:0;color:var(--muted);font-size:13px}.model .formula{margin-top:auto;padding-top:24px;color:#edf0e8;font-size:12px;font-weight:800}.model.rockabye{--accent:var(--coral)}.model.einstein{--accent:var(--sun)}.model.heybear{--accent:var(--aqua)}.model.moshi{--accent:var(--violet)}
+    .lanes{display:grid;gap:10px}.lane{display:grid;grid-template-columns:155px repeat(4,1fr);align-items:stretch;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#171a16}.lane-label{padding:18px;background:var(--panel2);font-size:11px;font-weight:900;letter-spacing:.07em}.lane-cell{padding:18px 15px;border-left:1px solid var(--line);font-size:12px;color:#d6d9d2}.lane-cell b{display:block;color:var(--lime);font-size:9px;letter-spacing:.08em;margin-bottom:6px}.lane.head .lane-cell{font-weight:900;color:#fff;background:#242820}.lane.head .lane-cell:nth-child(2){color:var(--coral)}.lane.head .lane-cell:nth-child(3){color:var(--sun)}.lane.head .lane-cell:nth-child(4){color:var(--aqua)}.lane.head .lane-cell:nth-child(5){color:var(--violet)}
+    .system-map{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.system-node{position:relative;min-height:220px;padding:23px 20px;border:1px solid var(--line);background:var(--panel)}.system-node:first-child{border-radius:17px 0 0 17px}.system-node:last-child{border-radius:0 17px 17px 0}.system-node:not(:last-child):after{content:'→';position:absolute;right:-13px;top:50%;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#18200f;font-weight:950;z-index:2}.system-node b{display:block;color:var(--lime);font-size:11px}.system-node strong{display:block;margin-top:38px;font-size:20px}.system-node span{display:block;margin-top:8px;color:var(--muted);font-size:11px}
+    .pattern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pattern{padding:24px;border-radius:17px;background:var(--panel);border-top:4px solid var(--accent)}.pattern:nth-child(1){--accent:var(--lime)}.pattern:nth-child(2){--accent:var(--aqua)}.pattern:nth-child(3){--accent:var(--sun)}.pattern:nth-child(4){--accent:var(--violet)}.pattern:nth-child(5){--accent:var(--coral)}.pattern:nth-child(6){--accent:var(--blue)}.pattern b{color:var(--accent);font-size:10px;letter-spacing:.1em}.pattern h3{font-size:21px;line-height:1.08;margin:13px 0 8px}.pattern p{margin:0;color:var(--muted);font-size:13px}
+    .gap-map{display:grid;grid-template-columns:1fr 72px 1fr;gap:16px;align-items:stretch}.gap-column{padding:28px;border-radius:19px;background:var(--panel);border:1px solid var(--line)}.gap-column h3{margin:0 0 22px;font-size:29px}.gap-list{display:grid;gap:10px}.gap-item{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding:14px;border-radius:12px;background:#171a16}.gap-item b{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#343a31;color:var(--muted);font-size:11px}.gap-column.opportunity{border-color:#5e8338;background:linear-gradient(145deg,#24341c,#1d241b)}.gap-column.opportunity .gap-item b{background:var(--lime);color:#18200f}.gap-item strong{display:block;font-size:14px}.gap-item span{display:block;margin-top:4px;color:var(--muted);font-size:11px}.gap-arrow{display:grid;place-items:center;color:var(--lime);font-size:42px;font-weight:950}
+    .do-not{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.limit{padding:22px;border:1px solid #594039;border-radius:16px;background:#251d19}.limit b{display:block;color:var(--coral);font-size:10px;letter-spacing:.09em}.limit h3{margin:13px 0 8px;font-size:19px}.limit p{margin:0;color:#c7b7b0;font-size:12px}
+    .bridge{padding:32px;border-radius:22px;background:linear-gradient(135deg,#26371e,#1b2218);border:1px solid #60833a}.bridge-top{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end}.bridge h3{margin:8px 0 0;font-size:clamp(35px,5vw,60px);line-height:.96;letter-spacing:-.055em}.bridge-top p{margin:0;color:#d1d6cc}.bridge-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:28px}.bridge-step{padding:20px;border-radius:14px;background:rgba(13,16,12,.55)}.bridge-step b{display:block;color:var(--lime);font-size:10px}.bridge-step strong{display:block;margin-top:13px;font-size:17px}.bridge-step span{display:block;margin-top:6px;color:var(--muted);font-size:11px}
+    .verdict{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px}.score-card{padding:28px;border-radius:19px;background:#eef1e8;color:#141713}.score-card small{font-size:10px;font-weight:950;letter-spacing:.11em;color:#587330}.score-card strong{display:block;margin-top:22px;font-size:clamp(50px,7vw,82px);line-height:.88;letter-spacing:-.065em}.score-card p{margin:22px 0 0;font-size:17px}.decision-card{padding:30px;border-radius:19px;background:var(--panel);border:1px solid var(--line)}.decision-card h3{font-size:31px;margin:0 0 16px}.decision-card ol{padding:0;list-style:none;counter-reset:decision;display:grid;gap:10px}.decision-card li{counter-increment:decision;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;padding:14px;background:#171a16;border-radius:12px;color:#d7dbd2;font-size:13px}.decision-card li:before{content:counter(decision,decimal-leading-zero);width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#18200f;font-weight:950}
+    .sources a{color:var(--lime)}
+    @media(max-width:920px){.models{grid-template-columns:1fr 1fr}.thesis,.gap-map,.bridge-top,.verdict{grid-template-columns:1fr}.gap-arrow{transform:rotate(90deg);min-height:40px}.system-map{grid-template-columns:1fr}.system-node{min-height:0;border-radius:0!important}.system-node:not(:last-child):after{display:none}.lane{grid-template-columns:125px repeat(4,minmax(170px,1fr));overflow-x:auto}.lanes{overflow-x:auto}.bridge-flow,.do-not{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.models,.pattern-grid,.bridge-flow,.do-not{grid-template-columns:1fr}.model{min-height:280px}.thesis-main{min-height:350px;padding:24px}.lane{min-width:860px}.lanes{padding-bottom:6px}.gap-column,.bridge,.score-card,.decision-card{padding:22px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><div class="mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><small>Baby Maestri · Market Benchmark</small></div></div><a class="back" href="./?week=week-06">← VOLVER AL ROADMAP</a></div></header>
+  <main>
+    <div class="hero">
+      <div class="eyebrow">INFORME COMPLETO · NOV · CREAR · LUNES 09 NOV 2026</div>
+      <h1>Los líderes no venden contenido. <em>Construyen hábitos.</em></h1>
+      <p class="lede">El benchmark revela cuatro maneras de convertir música, video y propiedad intelectual en una relación que las familias comprenden, utilizan y vuelven a buscar. La oportunidad de Baby Maestri no está en imitar su estética: está en aprender la arquitectura.</p>
+      <div class="pills"><span class="pill accent">BENCHMARK v0.1</span><span class="pill">4 MODELOS</span><span class="pill">PATRONES TRANSFERIBLES</span><span class="pill">NOCHE TRANQUILA</span></div>
+    </div>
+
+    <div class="executive"><b>CONCLUSIÓN EJECUTIVA</b><h2>Baby Maestri ya posee el activo que muchos competidores necesitan fabricar: un catálogo profundo. Lo que todavía debe construir es una promesa de uso, un sistema reconocible y una razón para regresar.</h2><p>El mercado no se organiza únicamente por género musical. Se organiza por momentos: dormir, calmar, jugar, aprender, compartir y descubrir. Las marcas líderes empaquetan esos momentos en bibliotecas, personajes, productos, aplicaciones o series. F5 debe comenzar con la unidad mínima que pueda demostrar utilidad y retorno.</p></div>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">01 · LA TESIS DEL BENCHMARK</div><h2>De “tener contenido” a ocupar un momento familiar</h2></div><p>La escala visible es una consecuencia. La arquitectura estratégica aparece antes: una necesidad clara, códigos propios, biblioteca y continuidad.</p></div>
+      <div class="thesis">
+        <div class="thesis-main"><strong>NECESIDAD → EXPERIENCIA → RUTINA → RETORNO</strong><span>Los referentes reducen una decisión compleja —qué poner, qué ver, cómo calmar o qué compartir— y la convierten en una elección familiar sencilla.</span></div>
+        <div class="thesis-side">
+          <article class="signal"><b>NO COMPITEN SOLO POR ATENCIÓN</b><strong>Compiten por ser elegidos de nuevo</strong><p>El valor no termina en la primera reproducción. La experiencia debe merecer un siguiente uso.</p></article>
+          <article class="signal"><b>LA MARCA ES UN ATAJO</b><strong>Reconocer reduce fricción</strong><p>Personajes, nombres de colección, colores y formatos ayudan a anticipar qué recibirá la familia.</p></article>
+          <article class="signal"><b>LA BIBLIOTECA ES EL PRODUCTO</b><strong>Una pieza adquiere; el sistema retiene</strong><p>Series, playlists y catálogos permiten profundizar sin recomenzar la relación desde cero.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">02 · CUATRO MODELOS DE REFERENCIA</div><h2>No son un ranking: son cuatro arquitecturas distintas</h2></div><p>Se seleccionan por la claridad de su modelo, no para afirmar que compiten en el mismo segmento ni que una marca deba copiarse completa.</p></div>
+      <div class="models">
+        <article class="model rockabye"><div class="number">01</div><div class="type">CATÁLOGO TRANSFORMADO</div><h3>Rockabye Baby!</h3><p>Convierte repertorio popular reconocido por los adultos en versiones de cuna. El puente emocional conecta la identidad previa del padre o madre con su nueva vida familiar.</p><div class="formula">FAMILIARIDAD → REINTERPRETACIÓN → REGALO / ESCUCHA</div></article>
+        <article class="model einstein"><div class="number">02</div><div class="type">ECOSISTEMA DE DESARROLLO</div><h3>Baby Einstein</h3><p>Integra música, video, aprendizaje, edades, hitos y productos. La marca no depende de una sola plataforma: organiza un universo amplio alrededor del desarrollo temprano.</p><div class="formula">CURIOSIDAD → HITOS → CONTENIDO + PRODUCTO</div></article>
+        <article class="model heybear"><div class="number">03</div><div class="type">PROPIEDAD VISUAL</div><h3>Hey Bear Sensory</h3><p>Una gramática visual inmediatamente reconocible convierte sesiones de movimiento, estimulación o calma en un hábito audiovisual que luego se extiende a app y otras superficies.</p><div class="formula">CÓDIGO VISUAL → SESIÓN → PERSONAJES → ECOSISTEMA</div></article>
+        <article class="model moshi"><div class="number">04</div><div class="type">RUTINA DE DESCANSO</div><h3>Moshi Kids</h3><p>Organiza historias, música y experiencias alrededor de momentos funcionales como relajación y sueño. El valor recurrente se concentra en una biblioteca accesible por suscripción.</p><div class="formula">MOMENTO → RITUAL → BIBLIOTECA → SUSCRIPCIÓN</div></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">03 · MATRIZ COMPARATIVA</div><h2>La diferencia está en el mecanismo de retorno</h2></div><p>“Qué publican” explica poco. La pregunta útil es qué promete cada modelo, cómo adquiere atención y por qué una familia vuelve.</p></div>
+      <div class="lanes" aria-label="Matriz comparativa de referentes">
+        <div class="lane head"><div class="lane-label">VARIABLE</div><div class="lane-cell">ROCKABYE BABY!</div><div class="lane-cell">BABY EINSTEIN</div><div class="lane-cell">HEY BEAR</div><div class="lane-cell">MOSHI</div></div>
+        <div class="lane"><div class="lane-label">PROMESA</div><div class="lane-cell">Tus artistas favoritos convertidos en canciones de cuna.</div><div class="lane-cell">Jugar, aprender, crecer y descubrir.</div><div class="lane-cell">Experiencias sensoriales para distintos estados.</div><div class="lane-cell">Acompañar calma, sueño y regulación.</div></div>
+        <div class="lane"><div class="lane-label">ENTRADA</div><div class="lane-cell">Afinidad musical del adulto.</div><div class="lane-cell">Necesidad por edad o hito.</div><div class="lane-cell">Video visualmente magnético.</div><div class="lane-cell">Problema concreto de rutina.</div></div>
+        <div class="lane"><div class="lane-label">RETORNO</div><div class="lane-cell"><b>CATÁLOGO</b>Nuevos artistas y colecciones.</div><div class="lane-cell"><b>ECOSISTEMA</b>Edades, productos y contenidos.</div><div class="lane-cell"><b>PERSONAJES</b>Series, estados y sesiones.</div><div class="lane-cell"><b>RITUAL</b>Biblioteca y uso recurrente.</div></div>
+        <div class="lane"><div class="lane-label">EXPANSIÓN</div><div class="lane-cell">Streaming, formatos físicos y tienda.</div><div class="lane-cell">Productos, música, video y comercio.</div><div class="lane-cell">App, descargas, TV y propiedad intelectual.</div><div class="lane-cell">App, suscripción y contenidos temáticos.</div></div>
+        <div class="lane"><div class="lane-label">RIESGO</div><div class="lane-cell">Depender de repertorio ajeno y licencias.</div><div class="lane-cell">Diluir claridad por amplitud.</div><div class="lane-cell">Que el estímulo visual eclipse la música.</div><div class="lane-cell">Necesitar volumen y renovación constante.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">04 · EL SISTEMA QUE SE REPITE</div><h2>Una arquitectura común debajo de estéticas muy distintas</h2></div><p>Los referentes cambian de lenguaje y negocio, pero comparten una cadena que transforma descubrimiento en una relación más profunda.</p></div>
+      <div class="system-map">
+        <article class="system-node"><b>01</b><strong>Descubrir</strong><span>Un video, canción, búsqueda, personaje o necesidad abre la relación.</span></article>
+        <article class="system-node"><b>02</b><strong>Reconocer</strong><span>La promesa y los códigos permiten identificar quién ofrece la experiencia.</span></article>
+        <article class="system-node"><b>03</b><strong>Utilizar</strong><span>La familia encuentra una experiencia adecuada a un momento real.</span></article>
+        <article class="system-node"><b>04</b><strong>Conservar</strong><span>Playlist, app, suscripción o producto guardan el acceso.</span></article>
+        <article class="system-node"><b>05</b><strong>Regresar</strong><span>La rutina o la biblioteca justifican una nueva visita.</span></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">05 · SEIS PATRONES TRANSFERIBLES</div><h2>Copiar la lógica, no la apariencia</h2></div><p>Estos aprendizajes pueden orientar a F5 sin asumir que las audiencias, recursos o derechos de los referentes son equivalentes.</p></div>
+      <div class="pattern-grid">
+        <article class="pattern"><b>01 · MOMENTO</b><h3>La necesidad organiza mejor que el género</h3><p>“Dormir”, “bajar el ritmo” o “descubrir” son decisiones más fáciles que explorar un catálogo por compositor.</p></article>
+        <article class="pattern"><b>02 · CÓDIGOS</b><h3>La memoria necesita consistencia</h3><p>Una pieza puede gustar sin construir marca. Repetir una gramática visual y verbal ayuda a asociar la experiencia con su origen.</p></article>
+        <article class="pattern"><b>03 · BIBLIOTECA</b><h3>El catálogo debe sentirse curado</h3><p>La abundancia solo aporta valor cuando una familia entiende por dónde entrar y qué colección usar.</p></article>
+        <article class="pattern"><b>04 · FUNCIONES</b><h3>Cada formato cumple un trabajo</h3><p>El contenido corto adquiere atención; las sesiones, playlists o apps sostienen tiempo y recurrencia.</p></article>
+        <article class="pattern"><b>05 · ADULTO</b><h3>El bebé es el centro; el adulto elige</h3><p>La promesa debe emocionar y tranquilizar a quien decide qué experiencia entra en la rutina familiar.</p></article>
+        <article class="pattern"><b>06 · RETORNO</b><h3>La relación necesita un hogar</h3><p>Si el usuario no puede guardar, seguir o encontrar de nuevo la experiencia, el contenido desaparece con el feed.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">06 · LA BRECHA DE BABY MAESTRI</div><h2>La materia prima existe; falta empaquetarla como experiencia</h2></div><p>El benchmark no demuestra que una solución funcionará. Sí ayuda a nombrar la distancia entre el activo actual y el sistema que queremos validar.</p></div>
+      <div class="gap-map">
+        <div class="gap-column"><h3>Lo que existe hoy</h3><div class="gap-list">
+          <div class="gap-item"><b>01</b><div><strong>Catálogo evergreen</strong><span>195 pistas auditadas, 13 álbumes y repertorio clásico con consumo vigente.</span></div></div>
+          <div class="gap-item"><b>02</b><div><strong>Distribución activa</strong><span>Spotify y YouTube siguen encontrando oyentes aun con operación social limitada.</span></div></div>
+          <div class="gap-item"><b>03</b><div><strong>Contextos posibles</strong><span>Calma, gestación, juego y descubrimiento musical.</span></div></div>
+          <div class="gap-item"><b>04</b><div><strong>Historia e identidad</strong><span>Una marca existente, pero todavía poco legible en su presencia digital actual.</span></div></div>
+        </div>
+        <div class="gap-arrow">→</div>
+        <div class="gap-column opportunity"><h3>Lo que debemos construir</h3><div class="gap-list">
+          <div class="gap-item"><b>01</b><div><strong>Una promesa por momento</strong><span>Qué problema resuelve cada colección y para quién.</span></div></div>
+          <div class="gap-item"><b>02</b><div><strong>Un sistema reconocible</strong><span>Nombre, portada, voz, imágenes y presencia de marca coherentes.</span></div></div>
+          <div class="gap-item"><b>03</b><div><strong>Un destino guardable</strong><span>Playlist o colección que sobreviva al contenido de adquisición.</span></div></div>
+          <div class="gap-item"><b>04</b><div><strong>Una prueba de retorno</strong><span>Medir acceso, guardado, escucha intencional y señales de recurrencia.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">07 · LO QUE NO COPIAREMOS</div><h2>El benchmark también sirve para decir no</h2></div><p>Una buena referencia delimita. La escala de otros no justifica adoptar su estética, sus claims ni su estructura de costos antes de validar la necesidad.</p></div>
+      <div class="do-not">
+        <article class="limit"><b>NO · ESTÉTICA PRESTADA</b><h3>No parecer otra marca infantil</h3><p>Baby Maestri necesita humanidad realista e ilustración musical propia, no frutas, mascotas o códigos ajenos.</p></article>
+        <article class="limit"><b>NO · APP PREMATURA</b><h3>No construir infraestructura antes de recurrencia</h3><p>Primero demostraremos que una colección merece guardarse y utilizarse de nuevo.</p></article>
+        <article class="limit"><b>NO · CLAIMS MÉDICOS</b><h3>No prometer sueño o desarrollo garantizados</h3><p>Hablaremos de acompañar momentos y rutinas, no de resultados clínicos no demostrados.</p></article>
+        <article class="limit"><b>NO · VOLUMEN VACÍO</b><h3>No multiplicar piezas sin destino</h3><p>Cada contenido debe responder a una hipótesis, conducir a una experiencia y producir aprendizaje.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="bridge">
+        <div class="bridge-top"><div><div class="eyebrow">08 · LA TRADUCCIÓN PARA F5</div><h3>Noche tranquila es el producto mínimo del benchmark</h3></div><p>No es todavía una app, una gran campaña ni una nueva línea de negocio. Es la primera prueba de si Baby Maestri puede ocupar un momento familiar con una experiencia coherente, reconocible y guardable.</p></div>
+        <div class="bridge-flow">
+          <div class="bridge-step"><b>01 · PROMESA</b><strong>La noche tiene su propia melodía</strong><span>Un territorio comprensible para familias.</span></div>
+          <div class="bridge-step"><b>02 · EXPERIENCIA</b><strong>Playlist de 30–45 minutos</strong><span>Curaduría suficiente para ser útil.</span></div>
+          <div class="bridge-step"><b>03 · ADQUISICIÓN</b><strong>Reel BM-NT01</strong><span>Humanidad realista + ilustración musical.</span></div>
+          <div class="bridge-step"><b>04 · APRENDIZAJE</b><strong>Acceso, guardado y retorno</strong><span>Medir señales directas e indirectas.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">09 · DECISIÓN DEL DÍA</div><h2>Baby Maestri no necesita parecer más grande. Necesita volverse más útil y recordable.</h2></div><p>El benchmark se cierra cuando produce una decisión propia, no cuando acumula más ejemplos.</p></div>
+      <div class="verdict">
+        <div class="score-card"><small>OPORTUNIDAD ESTRATÉGICA</small><strong>CATÁLOGO<br>→ RUTINA</strong><p>Convertir música disponible en experiencias familiares con nombre, función y continuidad.</p></div>
+        <div class="decision-card"><h3>Lo que queda aprobado</h3><ol><li>Organizar el crecimiento alrededor de momentos de uso, no solo de canciones.</li><li>Usar contenido corto como puerta, no como producto final.</li><li>Construir primero una experiencia guardable en Spotify.</li><li>Validar Noche tranquila antes de abrir nuevas colecciones o una app.</li><li>Medir no solo alcance: observar acceso, adopción y recurrencia.</li></ol></div>
+      </div>
+      <div class="decision-strip" style="margin-top:14px"><strong>SIGUIENTE DÍA</strong><p>Martes 10 NOV: diseñar el sistema operativo BM-NT01 — playlist primero, enlace verificado, Reel terminado, publicación y medición.</p></div>
+    </section>
+
+    <footer class="sources"><strong>Fuentes y límites.</strong> Benchmark estratégico de F5, cerrado el 9 de noviembre de 2026. Se utilizaron las propuestas públicas oficiales de <a href="https://www.rockabyebabymusic.com/" target="_blank" rel="noreferrer">Rockabye Baby!</a>, <a href="https://www.babyeinstein.com/" target="_blank" rel="noreferrer">Baby Einstein</a>, <a href="https://www.heybearsensory.com/discover/" target="_blank" rel="noreferrer">Hey Bear Sensory</a> y <a href="https://www.moshikids.com/faqs/" target="_blank" rel="noreferrer">Moshi Kids</a>. Las marcas se estudian como arquetipos de modelo; no se presenta un ranking financiero ni se atribuyen causalmente sus resultados a una táctica aislada. Las conclusiones para Baby Maestri son hipótesis estratégicas que deberán validarse con comportamiento real.</footer>
+  </main>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"a8e65bddb01549f18507d0520f7419ab"}'></script>
+</body>
+</html>
