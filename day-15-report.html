@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11130f">
+  <meta name="description" content="Baby Maestri · Noche tranquila · Sistema de adquisición musical · 10 de noviembre de 2026">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23adff2f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%2320211f'%3EF5%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="baby-maestri-report.css">
+  <title>Baby Maestri · Noche tranquila</title>
+  <style>
+    :root{--night:#11130f;--panel:#20241f;--panel2:#292e26;--line:#3b4138;--green:#adff2f;--spotify:#1ed760;--moon:#ece2b9;--blue:#94b8e8;--muted:#b8bcb2}
+    body{background:radial-gradient(circle at 82% 4%,rgba(148,184,232,.09),transparent 28%),var(--night)}
+    .hero h1 em{font-style:normal;color:var(--spotify)}
+    .executive{border-left-color:var(--spotify);background:linear-gradient(135deg,#203225,#1b211b)}.executive b{color:var(--spotify)}
+    .system{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:stage}.system-step{counter-increment:stage;position:relative;min-height:250px;padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel);display:flex;flex-direction:column}.system-step:before{content:'0' counter(stage);width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#15200d;font-weight:950}.system-step:not(:last-child):after{content:'→';position:absolute;right:-22px;top:50%;font-size:28px;color:#6b7365}.system-step h3{font-size:23px;margin:22px 0 8px}.system-step p{margin:0;color:var(--muted);font-size:14px}.system-step strong{margin-top:auto;padding-top:20px;color:var(--green);font-size:11px;letter-spacing:.08em}
+    .why{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}.why-main{padding:30px;border:1px solid var(--spotify);border-radius:18px;background:linear-gradient(145deg,#213c2b,#1b221c)}.why-main .big{font-size:clamp(34px,5vw,62px);line-height:.97;letter-spacing:-.055em;font-weight:900}.why-main p{max-width:680px;color:#d1d6cd}.why-side{display:grid;gap:12px}.why-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.why-card b{display:block;color:var(--spotify);font-size:11px;letter-spacing:.09em}.why-card h3{margin:11px 0 7px;font-size:20px}.why-card p{margin:0;color:var(--muted);font-size:13px}
+    .playlist-card{display:grid;grid-template-columns:minmax(270px,.7fr) 1.3fr;gap:16px}.cover{aspect-ratio:1/1;position:relative;overflow:hidden;border-radius:20px;background:linear-gradient(155deg,#dce7ef 0%,#a9c2db 38%,#5b7390 100%);color:#101713;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.cover:before{content:'';position:absolute;width:62%;height:62%;right:-8%;top:-10%;border-radius:50%;background:var(--moon);box-shadow:0 0 70px rgba(236,226,185,.45)}.cover:after{content:'♪';position:absolute;right:12%;bottom:-9%;font-family:Georgia,serif;font-size:190px;opacity:.17}.cover small,.cover strong{position:relative;z-index:1}.cover small{font-size:11px;letter-spacing:.14em;font-weight:900}.cover strong{max-width:260px;font-family:Georgia,serif;font-size:clamp(38px,5vw,63px);line-height:.88;letter-spacing:-.055em}.brief{padding:28px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}.brief-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}.brief-item{padding:17px;border-radius:13px;background:#181b17}.brief-item b{display:block;color:var(--green);font-size:10px;letter-spacing:.09em}.brief-item span{display:block;margin-top:7px;color:#d0d3cb;font-size:13px}.tracklist{margin-top:16px;display:grid;gap:8px}.track{display:grid;grid-template-columns:35px 1fr auto;gap:12px;align-items:center;height:auto;padding:12px 14px;border:1px solid #343a32;border-radius:12px;background:#181a17}.track i{font-style:normal;color:var(--green);font-size:11px;font-weight:900}.track strong{font-size:13px}.track span{color:var(--muted);font-size:10px}
+    .copy-block{padding:30px;border-radius:18px;background:#edf0e6;color:#161914}.copy-block .label{font-size:10px;font-weight:900;letter-spacing:.12em;color:#57712f}.copy-block h3{font-family:Georgia,serif;font-size:36px;margin:18px 0}.copy-block p{font-family:Georgia,serif;font-size:20px;line-height:1.45}.copy-block .tagline{margin-top:25px;font-family:inherit;font-weight:900;font-size:13px;letter-spacing:.05em}
+    .profile-map{display:grid;grid-template-columns:1fr 1fr;gap:14px}.profile-surface{padding:26px;border-radius:17px;background:var(--panel);border:1px solid var(--line)}.profile-surface.spotify{border-color:var(--spotify)}.profile-surface .icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--spotify);color:#102216;font-weight:950}.profile-surface h3{font-size:25px;margin:20px 0 8px}.profile-surface p{color:var(--muted)}.profile-surface ul{padding-left:18px;color:#d0d3cb;line-height:1.7;font-size:14px}
+    .gate{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.gate-step{min-height:190px;padding:20px;border-radius:15px;background:var(--panel);border:1px solid var(--line)}.gate-step:first-child{border-color:var(--spotify)}.gate-step b{color:var(--spotify);font-size:11px}.gate-step h3{margin:18px 0 8px;font-size:18px}.gate-step p{margin:0;color:var(--muted);font-size:12px}.gate-step .state{display:inline-block;margin-top:18px;padding:5px 8px;border-radius:99px;background:#3c3c2c;color:#eddd9a;font-size:9px;font-weight:900}
+    .measurement{display:grid;grid-template-columns:1fr 1fr;gap:14px}.measure-card{padding:26px;border-radius:17px;background:var(--panel);border-top:4px solid var(--green)}.measure-card.indirect{border-color:var(--blue)}.measure-card b{font-size:11px;letter-spacing:.09em;color:var(--green)}.measure-card.indirect b{color:var(--blue)}.measure-card h3{font-size:25px;margin:12px 0}.measure-card ul{padding-left:19px;color:#d0d3cb;line-height:1.75}.measure-card small{display:block;color:var(--muted);line-height:1.5}
+    .cta{display:grid;grid-template-columns:.72fr 1.28fr;gap:14px}.phone{min-height:420px;border-radius:27px;padding:18px;background:#0a0b09;border:1px solid #444940;box-shadow:inset 0 0 0 7px #171a16;display:flex}.phone-screen{width:100%;border-radius:17px;padding:24px;background:linear-gradient(180deg,#17241f,#77899b 55%,#d9d9c6);display:flex;flex-direction:column;justify-content:flex-end;color:#fff}.phone-screen .bm{font-size:12px;font-weight:900;letter-spacing:.1em}.phone-screen strong{font-family:Georgia,serif;font-size:38px;line-height:.95;margin:15px 0}.phone-screen span{font-size:13px;line-height:1.45}.cta-copy{padding:30px;border-radius:18px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}.cta-copy h3{font-size:clamp(30px,4vw,50px);line-height:1;margin:0 0 20px}.cta-copy p{color:#d2d5cd;font-size:18px;line-height:1.55}.channel-route{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.channel-route div{padding:16px;background:#181b17;border-radius:12px}.channel-route b{display:block;color:var(--green);font-size:11px}.channel-route span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+    .sequence{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:28px}.sequence div{position:relative;padding:24px 18px;border:1px solid var(--line);background:var(--panel)}.sequence div:not(:last-child):after{content:'→';position:absolute;right:-12px;top:50%;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#13200c;font-weight:950;z-index:2}.sequence b{display:block;color:var(--green);font-size:10px}.sequence strong{display:block;margin-top:28px;font-size:17px}.sequence span{display:block;margin-top:7px;color:var(--muted);font-size:11px}
+    .decision{padding:28px;border-radius:18px;background:linear-gradient(145deg,#26351f,#1d241b);border:1px solid #54762c}.decision h3{font-size:clamp(28px,4vw,45px);margin:0 0 12px}.decision p{margin:0;color:#d0d5ca;font-size:17px}.decision strong{color:var(--green)}
+    .sources a{color:var(--green)}
+    @media(max-width:900px){.system{grid-template-columns:1fr 1fr}.system-step:nth-child(2):after{display:none}.why,.playlist-card,.cta{grid-template-columns:1fr}.gate,.sequence{grid-template-columns:1fr}.gate-step{min-height:0}.system-step:not(:last-child):after,.sequence div:not(:last-child):after{display:none}}
+    @media(max-width:560px){.system,.brief-grid,.profile-map,.measurement,.channel-route{grid-template-columns:1fr}.cover{max-width:420px}.phone{min-height:360px}.copy-block{padding:22px}.copy-block p{font-size:18px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><div class="mark">F5</div><div><strong>F5 AI MUSIC AGENCY</strong><small>Baby Maestri · Sistema de adquisición musical</small></div></div><a class="back" href="./?week=week-06">← VOLVER AL ROADMAP</a></div></header>
+  <main>
+    <div class="hero">
+      <div class="eyebrow">INFORME OPERATIVO · NOV · CREAR · MARTES 10 NOV 2026</div>
+      <h1>El Reel no es el producto. <em>Es la puerta de entrada.</em></h1>
+      <p class="lede">“Noche tranquila” conecta descubrimiento, acceso, escucha, guardado y retorno. BM-NT01 deja de ser una pieza aislada y se convierte en el primer experimento de adquisición musical del nuevo modelo Baby Maestri.</p>
+      <div class="pills"><span class="pill accent">BM-NT01</span><span class="pill">PLAYLIST PRIMERO</span><span class="pill">SPOTIFY VERIFICADO</span><span class="pill">ADOPCIÓN + RECURRENCIA</span></div>
+    </div>
+
+    <div class="executive"><b>DECISIÓN CENTRAL</b><h2>No publicaremos BM-NT01 hasta que “Noche tranquila” exista como una experiencia musical coherente, revisada, disponible y con un enlace comprobado.</h2><p>Estamos pasando de crear contenido para obtener visualizaciones a construir un pequeño sistema de adquisición y adopción musical. El Reel despierta interés; la playlist convierte ese interés en una experiencia que una familia puede escuchar, guardar y volver a utilizar.</p></div>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">01 · EL SISTEMA</div><h2>Una pieza abre el recorrido; la música sostiene la relación</h2></div><p>Cada etapa tiene un trabajo distinto. Si falta el destino musical, el Reel solo genera una impresión pasajera.</p></div>
+      <div class="system">
+        <article class="system-step"><h3>Reel BM-NT01</h3><p>Descubrir la marca y despertar interés mediante una situación familiar reconocible.</p><strong>ADQUISICIÓN</strong></article>
+        <article class="system-step"><h3>Enlace a Spotify</h3><p>Reducir la fricción entre la intención generada y la experiencia musical completa.</p><strong>ACCESO</strong></article>
+        <article class="system-step"><h3>Playlist Noche tranquila</h3><p>Escuchar, guardar y entender la propuesta editorial de Baby Maestri.</p><strong>ADOPCIÓN</strong></article>
+        <article class="system-step"><h3>Volver a la música</h3><p>Buscar que la colección se incorpore a una rutina y merezca una nueva visita.</p><strong>RECURRENCIA</strong></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">02 · POR QUÉ UNA PLAYLIST AHORA</div><h2>La playlist organiza el catálogo alrededor de una utilidad concreta</h2></div><p>No apostamos por “playlist” como truco algorítmico. Apostamos por una superficie editorial que puede convertir canciones separadas en una experiencia reconocible, guardable y repetible.</p></div>
+      <div class="why">
+        <div class="why-main"><div class="eyebrow">LA RAZÓN ESTRATÉGICA</div><div class="big">De consumo programado a elección intencional</div><p>La auditoría de Baby Maestri mostró que gran parte del crecimiento actual llega mediante playlists y escucha programada. “Noche tranquila” intenta dar el siguiente paso: que una familia reconozca una colección de la marca, la elija por su contexto y conserve el acceso.</p></div>
+        <div class="why-side">
+          <article class="why-card"><b>01 · CONTEXTO</b><h3>Resuelve “qué escuchar ahora”</h3><p>Una promesa clara reduce la necesidad de explorar pista por pista dentro de un catálogo amplio.</p></article>
+          <article class="why-card"><b>02 · CONTINUIDAD</b><h3>Puede guardarse y retomarse</h3><p>La experiencia no termina cuando desaparece el Reel del feed.</p></article>
+          <article class="why-card"><b>03 · PERFIL OFICIAL</b><h3>Puede vivir dentro del universo del artista</h3><p>Spotify permite mostrar playlists en Artist Playlists y destacar una mediante Artist Pick.</p></article>
+        </div>
+      </div>
+      <div class="insight-grid" style="margin-top:14px">
+        <article class="insight"><b>NO ES</b><h3>Una garantía de alcance</h3><p>Crear una playlist no asegura distribución algorítmica ni crecimiento automático.</p></article>
+        <article class="insight blue"><b>SÍ ES</b><h3>Una unidad editorial</h3><p>Nombre, portada, secuencia, descripción y promesa trabajan como una sola experiencia.</p></article>
+        <article class="insight sand"><b>Y PERMITE</b><h3>Una acción más profunda</h3><p>Escuchar y guardar se acercan más a adopción que una visualización aislada.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">03 · PLAYLIST BRIEF v0.1</div><h2>Noche tranquila debe sentirse curada, no ensamblada</h2></div><p>La colección inicial será suficientemente completa para ser útil, sin intentar convertirse desde el primer día en una biblioteca enorme.</p></div>
+      <div class="playlist-card">
+        <div class="cover"><small>BABY MAESTRI</small><strong>Noche<br>tranquila</strong></div>
+        <div class="brief"><div class="eyebrow">NOMBRE PROPUESTO</div><h3 style="font-size:30px;margin:12px 0">Noche tranquila | Música suave para bebés — Baby Maestri</h3><p style="color:var(--muted)">Combina una identidad propia con términos descriptivos. Su capacidad de descubrimiento deberá comprobarse; no se presupone.</p>
+          <div class="brief-grid"><div class="brief-item"><b>DURACIÓN INICIAL</b><span>Aproximadamente 30–45 minutos.</span></div><div class="brief-item"><b>FUNCIÓN</b><span>Acompañar rutinas tranquilas de la noche.</span></div><div class="brief-item"><b>TONO</b><span>Suave, instrumental, coherente y familiar.</span></div><div class="brief-item"><b>CRITERIO</b><span>Utilidad editorial antes que volumen.</span></div></div>
+          <div class="tracklist"><div class="track"><i>01</i><strong>Chopin · candidata seleccionada</strong><span>REVISAR ORDEN</span></div><div class="track"><i>02</i><strong>Mozart · sonata candidata 01</strong><span>REVISAR TRANSICIÓN</span></div><div class="track"><i>03</i><strong>Mozart · sonata candidata 02</strong><span>REVISAR TRANSICIÓN</span></div><div class="track"><i>+</i><strong>Pistas complementarias de la auditoría</strong><span>COMPLETAR 30–45 MIN</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">04 · IDENTIDAD EDITORIAL</div><h2>La portada y la descripción deben reconocer el mismo mundo del Reel</h2></div><p>La continuidad visual reduce la distancia entre lo que la familia vio y la colección que encuentra al abrir Spotify.</p></div>
+      <div class="grid2">
+        <div class="copy-block"><div class="label">DESCRIPCIÓN EDITORIAL PROPUESTA</div><h3>Noche tranquila · Baby Maestri</h3><p>Cuando el día comienza a terminar, cada pequeño momento merece su propia melodía.</p><p>Una selección de música instrumental suave para acompañar las rutinas tranquilas de la noche y disfrutar de momentos musicales en familia.</p><div class="tagline">GRANDES MELODÍAS. PEQUEÑOS MOMENTOS.</div></div>
+        <div class="card" style="padding:30px"><div class="eyebrow">SISTEMA VISUAL</div><h3 style="font-size:32px;margin-top:18px">Una misma promesa en dos formatos</h3><div class="bar-list" style="margin-top:28px"><div class="bar-row"><div class="bar-label">Reel vertical<small>DESCUBRIMIENTO</small></div><div class="track"><span class="fill instagram" style="width:100%"></span></div><div class="bar-value">9:16</div></div><div class="bar-row"><div class="bar-label">Portada Spotify<small>DESTINO MUSICAL</small></div><div class="track"><span class="fill spotify" style="width:100%"></span></div><div class="bar-value">1:1</div></div><div class="bar-row"><div class="bar-label">Códigos comunes<small>RECONOCIMIENTO</small></div><div class="track"><span class="fill sand" style="width:100%"></span></div><div class="bar-value">BM</div></div></div><p style="margin-top:28px;color:var(--muted)">Dirección fotorealista e ilustrada compartida, atmósfera nocturna, nombre visible y presencia clara de Baby Maestri.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">05 · PERFIL OFICIAL</div><h2>La playlist debe quedar integrada al hogar digital de Baby Maestri</h2></div><p>La cuenta que crea la playlist y el acceso a Spotify for Artists cumplen funciones distintas dentro del sistema.</p></div>
+      <div class="profile-map">
+        <article class="profile-surface spotify"><div class="icon">01</div><h3>Cuenta oficial controlada</h3><p>Crear y administrar la playlist desde una cuenta estable de F5/Baby Maestri.</p><ul><li>Nombre de cuenta reconocible.</li><li>Orden editorial aprobado.</li><li>Portada y descripción definitivas.</li><li>Enlace público comprobado.</li></ul></article>
+        <article class="profile-surface"><div class="icon">02</div><h3>Spotify for Artists</h3><p>Integrar la colección al perfil verificado para que no dependa únicamente del enlace externo.</p><ul><li>Añadirla en Artist Playlists.</li><li>Destacarla mediante Artist Pick.</li><li>Agregar imagen y mensaje contextual.</li><li>Revisar periódicamente su vigencia.</li></ul></article>
+      </div>
+      <div class="note" style="margin-top:14px"><strong>Condición de acceso:</strong> estas acciones requieren permisos de administrador o editor en Spotify for Artists. Artist Pick puede mostrar una playlist en la parte superior del perfil y actualmente permanece hasta 180 días, salvo que se cambie antes.</div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">06 · CIERRE DE BM-NT01</div><h2>La llamada a la acción presenta una experiencia, no un enlace desnudo</h2></div><p>El mensaje debe explicar por qué vale la pena salir del feed y qué encontrará la familia al hacerlo.</p></div>
+      <div class="cta"><div class="phone"><div class="phone-screen"><div class="bm">BABY MAESTRI</div><strong>La noche tiene su propia melodía.</strong><span>Descubre Noche tranquila, nuestra colección de música instrumental para compartir en familia.</span></div></div><div class="cta-copy"><div class="eyebrow">TEXTO PROPUESTO</div><h3>Escúchala y guárdala en Spotify.</h3><p>Descubre <strong>Noche tranquila</strong>, nuestra colección de música instrumental para compartir en familia.</p><div class="channel-route"><div><b>INSTAGRAM</b><span>Enlace en el perfil o historia con enlace, comprobado antes de publicar.</span></div><div><b>YOUTUBE</b><span>Superficie de enlace disponible para el formato, verificada de extremo a extremo.</span></div></div></div></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">07 · GATE DE LANZAMIENTO</div><h2>El Reel solo sale cuando el destino musical está listo</h2></div><p>El gate protege la experiencia y evita pedir una acción que todavía no tiene un destino confiable.</p></div>
+      <div class="gate">
+        <article class="gate-step"><b>01</b><h3>Curaduría</h3><p>Pistas, orden, duración y transiciones aprobadas.</p><span class="state">PENDIENTE</span></article>
+        <article class="gate-step"><b>02</b><h3>Identidad</h3><p>Nombre, portada y descripción aprobados.</p><span class="state">PENDIENTE</span></article>
+        <article class="gate-step"><b>03</b><h3>Publicación</h3><p>Playlist visible desde la cuenta controlada.</p><span class="state">PENDIENTE</span></article>
+        <article class="gate-step"><b>04</b><h3>Perfil</h3><p>Artist Playlists y Artist Pick configurados.</p><span class="state">PENDIENTE</span></article>
+        <article class="gate-step"><b>05</b><h3>Enlace</h3><p>Apertura móvil y escritorio comprobada.</p><span class="state">PENDIENTE</span></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">08 · MEDICIÓN</div><h2>Separaremos conversiones observables de señales contextuales</h2></div><p>No todas las personas podrán rastrearse individualmente desde el Reel hasta una escucha. La honestidad metodológica forma parte del experimento.</p></div>
+      <div class="measurement">
+        <article class="measure-card"><b>MÉTRICAS DIRECTAS</b><h3>Acciones que sí podemos observar</h3><ul><li>Visualizaciones y retención de BM-NT01.</li><li>Guardados, compartidos y visitas al perfil.</li><li>Clics en un enlace identificable, cuando la plataforma los reporte.</li><li>Seguidores o guardados visibles de la playlist, según disponibilidad.</li></ul><small>Describen pasos concretos, pero no necesariamente identifican a la misma persona en todo el recorrido.</small></article>
+        <article class="measure-card indirect"><b>SEÑALES INDIRECTAS</b><h3>Cambios que exigen cautela</h3><ul><li>Streams de las composiciones incluidas.</li><li>Oyentes activos y fuentes de reproducción.</li><li>Visitas o crecimiento del perfil de artista.</li><li>Variaciones temporales coincidentes con la publicación.</li></ul><small>Ayudan a interpretar el contexto. Por sí solas no prueban que BM-NT01 causó el cambio.</small></article>
+      </div>
+      <div class="table-wrap" style="margin-top:14px"><table class="data-table"><thead><tr><th>Etapa</th><th>Pregunta</th><th>Señal principal</th><th>Decisión</th></tr></thead><tbody><tr><td>Adquisición</td><td>¿El Reel despierta interés?</td><td>Retención, compartidos, visitas</td><td>Conservar o reformular la apertura</td></tr><tr><td>Acceso</td><td>¿La audiencia intenta llegar a Spotify?</td><td>Clics disponibles y visitas</td><td>Revisar CTA y fricción</td></tr><tr><td>Adopción</td><td>¿La colección merece conservarse?</td><td>Guardados y consumo intencional</td><td>Revisar promesa y curaduría</td></tr><tr><td>Recurrencia</td><td>¿La experiencia vuelve a utilizarse?</td><td>Señales repetidas en ventanas posteriores</td><td>Extender, repetir o detener</td></tr></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">09 · SECUENCIA OPERATIVA</div><h2>Playlist primero. Publicación después.</h2></div><p>Podemos producir BM-NT01 en paralelo, pero su lanzamiento permanece bloqueado hasta comprobar el destino.</p></div>
+      <div class="sequence"><div><b>01</b><strong>Playlist</strong><span>Curar, ordenar, describir y publicar.</span></div><div><b>02</b><strong>Enlace</strong><span>Comprobar acceso y superficies oficiales.</span></div><div><b>03</b><strong>Reel</strong><span>Finalizar narrativa, portada y CTA.</span></div><div><b>04</b><strong>Publicación</strong><span>Activar canales con registro de versión.</span></div><div><b>05</b><strong>Medición</strong><span>Observar adquisición, adopción y retorno.</span></div></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="eyebrow">10 · DECISIÓN DEL DÍA</div><h2>BM-NT01 se convierte en un experimento de sistema</h2></div><p>La prueba ya no pregunta únicamente si un video funciona. Pregunta si F5 puede conectar contenido, identidad, destino musical y aprendizaje.</p></div>
+      <div class="decision"><h3>Comenzamos creando <strong>«Noche tranquila»</strong> en Spotify.</h3><p>En paralelo seguiremos desarrollando el Reel, pero su lanzamiento dependerá de que la playlist sea coherente, útil, visible y accesible. Los días restantes de NOV · CREAR quedan en espera hasta que este gate produzca una siguiente decisión real.</p></div>
+    </section>
+
+    <footer class="sources"><strong>Fuentes y límites.</strong> Documento operativo construido el 10 de noviembre de 2026 a partir del trabajo de F5 y la auditoría de Baby Maestri. Spotify confirma que las cuentas con rol Admin o Editor pueden mostrar playlists en <a href="https://support.spotify.com/artists/article/posting-artist-playlists-to-your-profile/" target="_blank" rel="noreferrer">Artist Playlists</a> y destacar playlists mediante <a href="https://support.spotify.com/artists/article/managing-your-artist-pick/" target="_blank" rel="noreferrer">Artist Pick</a>. Spotify for Artists describe las playlists como una superficie para guiar a los oyentes por la música del artista y señala que el perfil permite profundizar la relación con nuevos oyentes y fans. Estas capacidades no garantizan alcance, guardados ni ingresos. La atribución entre Instagram, YouTube y Spotify será parcial; diferenciaremos acciones observables de cambios contextuales.</footer>
+  </main>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"a8e65bddb01549f18507d0520f7419ab"}'></script>
+</body>
+</html>
