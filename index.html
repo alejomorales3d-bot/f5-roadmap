@@ -89,12 +89,14 @@
     #f5-roadmap-inline .f5-report-link.additional { margin-top: 10px; background: light-dark(#fff,#20221e); color: light-dark(#20211f,#fff); border: 1px solid light-dark(#20211f,#4b4e47); }
     #f5-roadmap-inline .f5-report-link.additional span { color: light-dark(#66675f,#aaa); }
     #f5-roadmap-inline .f5-report-link.additional b { color: light-dark(#679c18,#adff2f); }
-    #f5-roadmap-inline .f5-parking { background: #20211f; color: #fff; border-radius: 16px; padding: 18px; align-self: start; }
+    #f5-roadmap-inline .f5-parking { margin-top: 22px; background: #20211f; color: #fff; border-radius: 18px; padding: 24px; }
+    #f5-roadmap-inline .f5-parking-top { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding-bottom: 18px; border-bottom: 1px solid #3a3b37; }
     #f5-roadmap-inline .f5-parking-head { display: flex; gap: 10px; align-items: center; }
     #f5-roadmap-inline .f5-bulb { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #adff2f; color: #20211f; }
-    #f5-roadmap-inline .f5-parking h2 { margin: 0; font-size: 15px; }
-    #f5-roadmap-inline .f5-parking > p { margin: 10px 0 16px; font-size: 12px; line-height: 1.5; color: #aaa; }
-    #f5-roadmap-inline .f5-idea { padding: 12px 0; border-top: 1px solid #3a3b37; font-size: 13px; line-height: 1.45; color: #ddd; }
+    #f5-roadmap-inline .f5-parking h2 { margin: 0; font-size: 22px; letter-spacing: -.025em; }
+    #f5-roadmap-inline .f5-parking-top > p { max-width: 440px; margin: 0; font-size: 13px; line-height: 1.5; color: #aaa; }
+    #f5-roadmap-inline .f5-parking-ideas { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0 20px; }
+    #f5-roadmap-inline .f5-idea { padding: 17px 0; border-bottom: 1px solid #3a3b37; font-size: 13px; line-height: 1.5; color: #ddd; }
     #f5-roadmap-inline .f5-idea strong { display: block; color: #adff2f; font-size: 11px; letter-spacing: .06em; margin-bottom: 5px; }
     #f5-roadmap-inline .f5-side { display: grid; gap: 14px; align-self: start; padding-top: 26px; }
     #f5-roadmap-inline .f5-season-tool { position: relative; overflow: hidden; padding: 19px; border: 1px solid #3c6fff; border-radius: 17px; color: #fff; background: radial-gradient(circle at 100% 0%,rgba(81,135,255,.34),transparent 34%),linear-gradient(155deg,#0d2353 0%,#09152f 58%,#070d1d 100%); box-shadow: 0 18px 42px rgba(4,18,48,.34); }
@@ -154,6 +156,7 @@
       #f5-roadmap-inline .f5-progress { width: 100%; }
       #f5-roadmap-inline .f5-layout { grid-template-columns: 1fr; }
       #f5-roadmap-inline .f5-side { padding-top: 0; }
+      #f5-roadmap-inline .f5-parking-ideas { grid-template-columns: repeat(2,minmax(0,1fr)); }
       #f5-roadmap-inline .f5-campaign-tool, #f5-roadmap-inline .f5-money-tool { min-height: 0; }
       #f5-roadmap-inline .f5-days { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
@@ -209,9 +212,11 @@
       #f5-roadmap-inline .f5-money-tool h2 { max-width: 270px; font-size: 25px; }
       #f5-roadmap-inline .f5-money-tool p { font-size: 14px; }
       #f5-roadmap-inline .f5-tool-total { font-size: 34px; }
-      #f5-roadmap-inline .f5-parking { order: 2; padding: 20px; }
+      #f5-roadmap-inline .f5-parking { padding: 20px; }
+      #f5-roadmap-inline .f5-parking-top { align-items: start; flex-direction: column; gap: 12px; }
+      #f5-roadmap-inline .f5-parking-ideas { grid-template-columns: 1fr; }
       #f5-roadmap-inline .f5-parking h2 { font-size: 17px; }
-      #f5-roadmap-inline .f5-parking > p, #f5-roadmap-inline .f5-idea { font-size: 14px; line-height: 1.55; }
+      #f5-roadmap-inline .f5-parking-top > p, #f5-roadmap-inline .f5-idea { font-size: 14px; line-height: 1.55; }
     }
   </style>
 
@@ -297,9 +302,14 @@
             </div>
             <div class="f5-campaign-cta"><span>REVISAR PARA MÁS ADELANTE</span><span>↗</span></div>
           </a>
-          <div class="f5-parking">
-          <div class="f5-parking-head"><div class="f5-bulb"><i data-lucide="lightbulb" aria-hidden="true"></i></div><h2>PARKING LOT</h2></div>
-          <p>Ideas valiosas que no deben convertirse todavía en trabajo.</p>
+        </aside>
+      </div>
+      <section class="f5-parking" aria-labelledby="f5-parking-title">
+        <div class="f5-parking-top">
+          <div class="f5-parking-head"><div class="f5-bulb"><i data-lucide="lightbulb" aria-hidden="true"></i></div><h2 id="f5-parking-title">PARKING LOT</h2></div>
+          <p>Ideas valiosas que permanecen visibles para no perderlas, pero que todavía no deben convertirse en compromisos de trabajo.</p>
+        </div>
+        <div class="f5-parking-ideas">
           <div class="f5-idea"><strong>HIPÓTESIS</strong>F5 como <em>Audience &amp; Artist Growth System</em>. Validar con la evidencia de los próximos días antes de decidir.</div>
           <div class="f5-idea"><strong>FOCO NOVIEMBRE</strong>Baby Maestri es el laboratorio principal. Aprender con un catálogo evergreen y trasladar después el sistema —no las mismas tácticas— a las otras propuestas.</div>
           <div class="f5-idea"><strong>PRINCIPIO DE ARQUITECTURA</strong>F5 como sistema de capacidades, no como colección de agentes. Usar el nivel mínimo de autonomía necesario y validar cada agente con un trabajo real.</div>
@@ -308,9 +318,8 @@
           <div class="f5-idea"><strong>APP BABY MAESTRI</strong>Oportunidad futura: música, contenidos para familias y, más adelante, comercio. No diseñarla en noviembre hasta demostrar una necesidad y una relación recurrente.</div>
           <div class="f5-idea"><strong>EXPANSIÓN COMERCIAL</strong>Ropa, accesorios y e-commerce permanecen como visión de largo plazo. Primero construir reconocimiento, confianza e interés medible por la música.</div>
           <div class="f5-idea"><strong>REGLA</strong>La auditoría termina cuando permite decidir y producir. Noviembre debe cerrar con comunicación activa, experimentos y aprendizaje, no con otro diagnóstico interminable.</div>
-          </div>
-        </aside>
-      </div>
+        </div>
+      </section>
     </div>
   </section>
 
